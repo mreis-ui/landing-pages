@@ -43,14 +43,41 @@ export default {
       const kiConsent = data.ki_consent === true || data.ki_consent === 'true';
       
       // Build tags array
-      const tags = ['src_google_ads', 'stage_1_chaos'];
-      if (kiConsent) {
+      const tags = data.tags 
+        ? data.tags.split(',').map(t => t.trim())
+        : ['src_google_ads', 'stage_1_chaos'];
+      if (kiConsent && !tags.includes('optin_ki_call_consent')) {
         tags.push('optin_ki_call_consent');
-      } else {
+      } else if (!kiConsent && !tags.includes('synthflow_disabled')) {
         tags.push('synthflow_disabled');
       }
 
+      // Build custom fields for GCLID + source tracking
+      const customFields = [];
+      if (data.gclid) {
+        customFields.push({ key: 'gclid', field_value: data.gclid });
+      }
+      if (data.source) {
+        customFields.push({ key: 'lead_source_detail', field_value: data.source });
+      }
+
       // Create contact in GHL
+      const ghlPayload = {
+        locationId: env.GHL_LOCATION_ID,
+        firstName: data.first_name || '',
+        lastName: data.last_name || '',
+        email: data.email || '',
+        phone: data.phone || '',
+        companyName: data.company || '',
+        tags: tags,
+        source: data.source || 'Landing Page'
+      };
+
+      // Add custom fields if present
+      if (customFields.length > 0) {
+        ghlPayload.customFields = customFields;
+      }
+
       const ghlResponse = await fetch('https://services.leadconnectorhq.com/contacts/', {
         method: 'POST',
         headers: {
@@ -58,16 +85,7 @@ export default {
           'Content-Type': 'application/json',
           'Version': '2021-07-28'
         },
-        body: JSON.stringify({
-          locationId: env.GHL_LOCATION_ID,
-          firstName: data.first_name || '',
-          lastName: data.last_name || '',
-          email: data.email || '',
-          phone: data.phone || '',
-          companyName: data.company || '',
-          tags: tags,
-          source: data.source || 'Landing Page'
-        })
+        body: JSON.stringify(ghlPayload)
       });
 
       const result = await ghlResponse.json();

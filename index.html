@@ -1397,6 +1397,23 @@
             });
         });
 
+        // ─── GCLID Capture ───
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const gclid = params.get('gclid');
+            if (gclid) {
+                try { sessionStorage.setItem('gclid', gclid); } catch(e) {}
+                // Append gclid to all outbound demo/decision links
+                document.querySelectorAll('a[href*="demo.flowbyte"], a[href*="decision"], a[href*="consideration"]').forEach(a => {
+                    try {
+                        const url = new URL(a.href);
+                        url.searchParams.set('gclid', gclid);
+                        a.href = url.toString();
+                    } catch(e) {}
+                });
+            }
+        })();
+
         // ─── CTA TRACKING ───
         document.querySelectorAll('[id*="cta"]').forEach(el => {
             el.addEventListener('click', function() {

@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Werkstatt ONE — Schluss mit Zettelwirtschaft im KFZ-Betrieb</title>
+    <meta name="description" content="Die #1 ERP-Software für KFZ-Betriebe. Digitalisieren Sie Ihren Werkstattbetrieb — von der Terminplanung bis zur Rechnung.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Google Ads Conversion Tracking (Global Site Tag) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17943325984"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17943325984');
+        // Enhanced conversions
+        gtag('config', 'AW-17943325984', {
+            'allow_enhanced_conversions': true
+        });
+    </script>
+
+    <style>
+        :root {
+            --bg: #0A0A0C;
+            --bg-elevated: #111113;
+            --bg-card: #18181B;
+            --text-primary: #F5F3F0;
+            --text-secondary: #8C8A85;
+            --gold: #D4922A;
+            --gold-hover: #E09E36;
+            --gold-subtle: rgba(212, 146, 42, 0.08);
+            --border: #2A2824;
+            --radius: 8px;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            font-size: 16px;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ─── NAVIGATION ─── */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 20px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(8, 8, 10, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        .nav-logo span {
+            color: var(--gold);
+        }
+
+        .nav-cta {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px 24px;
+            background: transparent;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            cursor: pointer;
+        }
+
+        .nav-cta:hover {
+            background: var(--gold);
+            color: var(--bg);
+        }
+
+        /* ─── HERO SECTION ─── */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 24px 80px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, transparent, var(--bg));
+            pointer-events: none;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 6px 16px;
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
+            max-width: 800px;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 .accent {
+            color: var(--gold);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            color: var(--text-secondary);
+            max-width: 560px;
+            line-height: 1.7;
+            margin-bottom: 48px;
+        }
+
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 16px 40px;
+            background: var(--gold);
+            color: var(--bg);
+            border: none;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            letter-spacing: -0.01em;
+        }
+
+        .cta-primary:hover {
+            background: var(--gold-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 32px rgba(191, 155, 84, 0.2);
+        }
+
+        /* ─── PAIN POINTS ─── */
+        .pain-section {
+            padding: 120px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .pain-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .pain-section .subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            margin-bottom: 64px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pain-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .pain-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+
+        .pain-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-2px);
+        }
+
+        .pain-card .icon {
+            width: 48px;
+            height: 48px;
+            background: var(--gold-subtle);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .pain-card h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+
+        .pain-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ─── STATS BAR ─── */
+        .stats {
+            padding: 80px 24px;
+            background: var(--bg-elevated);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .stats-inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+            text-align: center;
+        }
+
+        .stat-item .number {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: -0.03em;
+        }
+
+        .stat-item .label {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 4px;
+        }
+
+        /* ─── CTA SECTION ─── */
+        .final-cta {
+            padding: 120px 24px;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 16px;
+        }
+
+        .final-cta h2 .accent {
+            color: var(--gold);
+        }
+
+        .final-cta p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            max-width: 500px;
+            margin: 0 auto 40px;
+        }
+
+        .trust-line {
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 16px;
+            letter-spacing: 0.02em;
+        }
+
+        /* ─── FOOTER ─── */
+        footer {
+            padding: 40px 24px;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+        }
+
+        /* ─── RESPONSIVE ─── */
+        @media (max-width: 768px) {
+            nav { padding: 16px 20px; }
+            .stats-inner { grid-template-columns: 1fr; gap: 32px; }
+            .pain-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-logo">Werkstatt <span>ONE</span></div>
+        <a href="consideration.html?utm_funnel=awareness&utm_source=landing" class="nav-cta" id="nav-cta-awareness">Mehr erfahren</a>
+    </nav>
+
+    <section class="hero">
+        <span class="hero-tag">Für KFZ-Meisterbetriebe</span>
+        <h1>Noch <span class="accent">Zettelwirtschaft</span> im Betrieb?</h1>
+        <p>Während Sie Aufträge auf Papier verwalten, verlieren Sie jeden Tag Zeit, Geld und Kunden. Es gibt einen besseren Weg.</p>
+        <a href="consideration.html?utm_funnel=awareness&utm_source=landing" class="cta-primary" id="hero-cta-awareness">Jetzt ansehen →</a>
+    </section>
+
+    <section class="pain-section">
+        <h2>Kommt Ihnen das bekannt vor?</h2>
+        <p class="subtitle">Die meisten KFZ-Betriebe kämpfen täglich mit denselben Problemen.</p>
+        <div class="pain-grid">
+            <div class="pain-card">
+                <div class="icon">📋</div>
+                <h3>Aufträge auf Zetteln</h3>
+                <p>Handgeschriebene Aufträge gehen verloren, werden falsch gelesen oder vergessen. Mehrere Stunden pro Woche — verschwendet.</p>
+            </div>
+            <div class="pain-card">
+                <div class="icon">⏰</div>
+                <h3>Mahnwesen per Hand</h3>
+                <p>Offene Rechnungen stapeln sich, weil niemand Zeit hat, Mahnungen zu schreiben. Tausende Euro pro Jahr — zu spät oder gar nicht kassiert.</p>
+            </div>
+            <div class="pain-card">
+                <div class="icon">📞</div>
+                <h3>Termine am Telefon</h3>
+                <p>Kunden rufen an, Sie stehen am Fahrzeug. Rückrufe vergessen. Konkurrenzbetrieb bekommt den Auftrag.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-inner">
+            <div class="stat-item">
+                <div class="number">10+ h</div>
+                <div class="label">pro Woche verlieren viele Betriebe an Verwaltung</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">5 Min.</div>
+                <div class="label">bis Ihr Betrieb mit Werkstatt ONE digital läuft</div>
+            </div>
+            <div class="stat-item">
+                <div class="number">30 Tage</div>
+                <div class="label">kostenlos testen · ohne Risiko · ohne Kreditkarte</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta" id="cta">
+        <h2>Bereit für den <span class="accent">nächsten Schritt?</span></h2>
+        <p>Erfahren Sie, wie Werkstatt ONE diese Probleme für Betriebe wie Ihren löst.</p>
+        <a href="consideration.html?utm_funnel=awareness" class="cta-primary" id="final-cta-awareness"
+           onclick="gtag('event', 'cta_click', {'event_category':'funnel','event_label':'awareness_to_consideration','page':'awareness'});">Lösungen entdecken →</a>
+        <p class="trust-line">Keine Kreditkarte · Keine Verpflichtung · Made in Germany</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Flowbyte Systems GmbH · Werkstatt ONE · <a href="/impressum" style="color: var(--text-secondary);">Impressum</a> · <a href="/datenschutz" style="color: var(--text-secondary);">Datenschutz</a></p>
+    </footer>
+
+    <script>
+        // ─── GCLID Capture ───
+        // Captures Google Click ID from URL for offline conversion matching
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const gclid = params.get('gclid');
+            if (gclid) {
+                try { sessionStorage.setItem('gclid', gclid); } catch(e) {}
+                // Append gclid to all outbound CTA links
+                document.querySelectorAll('a[href*="consideration"], a[href*="decision"]').forEach(a => {
+                    const url = new URL(a.href, window.location.origin);
+                    url.searchParams.set('gclid', gclid);
+                    a.href = url.toString();
+                });
+            }
+        })();
+
+        // ─── Scroll Depth Tracking ───
+        let scrollThresholds = [25, 50, 75, 100];
+        let firedThresholds = new Set();
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            scrollThresholds.forEach(t => {
+                if (scrollPercent >= t && !firedThresholds.has(t)) {
+                    firedThresholds.add(t);
+                    gtag('event', 'scroll_depth', { 'percent': t, 'page': 'awareness' });
+                }
+            });
+        });
+
+        // ─── CTA Click Tracking + GHL Funnel Event ───
+        document.querySelectorAll('[id*="cta"]').forEach(el => {
+            el.addEventListener('click', function() {
+                const ctaId = this.id;
+                // Google Ads event
+                gtag('event', 'cta_click', {
+                    'event_category': 'engagement',
+                    'event_label': ctaId,
+                    'page': 'awareness'
+                });
+                // GHL micro-event for funnel tracking (fire-and-forget)
+                const GHL_WEBHOOK = 'https://services.leadconnectorhq.com/hooks/epcWZcMAjE6RqtFxTSBq/webhook-trigger/0f54a7ab-ea10-4713-8b10-eb497607cb3a';
+                navigator.sendBeacon(GHL_WEBHOOK, JSON.stringify({
+                    event: 'funnel_awareness_cta_clicked',
+                    cta_id: ctaId,
+                    page: 'awareness',
+                    gclid: sessionStorage.getItem('gclid') || '',
+                    timestamp: new Date().toISOString()
+                }));
+            });
+        });
+
+        // ─── Time on Page Tracking ───
+        [15, 30, 60, 120].forEach(s => {
+            setTimeout(() => {
+                gtag('event', 'time_on_page', { 'seconds': s, 'page': 'awareness' });
+            }, s * 1000);
+        });
+    </script>
+</body>
+</html>

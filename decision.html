@@ -8,6 +8,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MDTTZXG5');</script>
+    <!-- End Google Tag Manager -->
+
     <!-- Google Ads Conversion Tracking -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17943325984"></script>
     <script>
@@ -283,6 +291,11 @@
         <p>© 2026 Flowbyte Systems GmbH · Werkstatt ONE · <a href="/impressum">Impressum</a> · <a href="/datenschutz">Datenschutz</a></p>
     </footer>
 
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MDTTZXG5"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <script>
         const AGENT_ID = 'agent_9301kp5p12a7fnbrbdmtt99vvqnv';
         let widgetLaunched = false;
@@ -312,6 +325,13 @@
                 'company': data.company,
                 'phone': data.phone || '',
                 'ki_consent': kiConsent
+            });
+
+            // Enhanced Conversions — user-provided data for better matching
+            gtag('set', 'user_data', {
+                'email': data.email,
+                'phone_number': data.phone || '',
+                'address': { 'first_name': data.name.split(' ')[0], 'last_name': data.name.split(' ').slice(1).join(' ') || '' }
             });
 
             // POST to secure backend proxy (API token stays server-side)

@@ -21,8 +21,9 @@ echo "╔═══════════════════════�
 echo "║   FlowByte LP Deploy → GitHub Pages    ║"
 echo "╚═════════════════════════════════════════╝"
 
-# Upload each HTML file
-for FILE in decision.html awareness.html consideration.html index.html; do
+# Upload each file
+for FILE in index.html awareness.html consideration.html decision.html ghl-proxy-worker.js README.md netlify.toml _redirects .gitignore; do
+  [ ! -f "$DIR/$FILE" ] && continue
   echo ""
   echo "─── Uploading: $FILE ───"
   

@@ -89,10 +89,36 @@ export default {
       });
 
       const result = await ghlResponse.json();
+      const contactId = result.contact?.id;
+
+      // Create pipeline opportunity for new contacts
+      if (contactId && ghlResponse.status === 201) {
+        const PIPELINE_ID = 'evhEdrasKMND8pvvAYpT';
+        const NEW_LEAD_STAGE = '639449f8-2206-4181-9972-efad55ad2ba1';
+        const contactName = `${data.first_name || ''} ${data.last_name || ''}`.trim();
+        
+        fetch('https://services.leadconnectorhq.com/opportunities/', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${env.GHL_TOKEN}`,
+            'Content-Type': 'application/json',
+            'Version': '2021-07-28'
+          },
+          body: JSON.stringify({
+            pipelineId: PIPELINE_ID,
+            locationId: env.GHL_LOCATION_ID,
+            name: `${contactName} - ${data.company || 'Neuer Lead'}`,
+            pipelineStageId: NEW_LEAD_STAGE,
+            contactId: contactId,
+            status: 'open',
+            monetaryValue: 2388
+          })
+        }).catch(() => {}); // Fire and forget — don't block response
+      }
       
       return new Response(JSON.stringify({ 
         success: true, 
-        contactId: result.contact?.id 
+        contactId: contactId 
       }), {
         status: ghlResponse.status === 201 ? 201 : 200,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }

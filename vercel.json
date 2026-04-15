@@ -15,6 +15,9 @@
     }
   ],
   "redirects": [
-    { "source": "/index", "destination": "/", "statusCode": 301 }
+    { "source": "/index", "destination": "/", "statusCode": 301 },
+    { "source": "/awareness", "destination": "/werkstatt-software", "statusCode": 301 },
+    { "source": "/consideration", "destination": "/funktionen", "statusCode": 301 },
+    { "source": "/decision", "destination": "/kostenlos-testen", "statusCode": 301 }
   ]
 }

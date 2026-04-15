@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum — Flowbytesystems</title>
+    <meta name="description" content="Impressum der Flowbytesystems. Verantwortlich: Mattis Kruse, Auf dem Hohenborn 43, 27777 Ganderkesee.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0A0A0C; --bg-elevated: #111113; --text-primary: #F5F3F0;
+            --text-secondary: #8C8A85; --accent: #D4922A; --accent-hover: #E09E36;
+            --border: #1E1D1A; --radius: 10px;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--font); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between;
+            background: rgba(10, 10, 12, 0.92); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(30, 29, 26, 0.5);
+        }
+        .nav-left { display: flex; align-items: center; gap: 48px; }
+        .nav-logo { font-weight: 700; font-size: 1.05rem; color: var(--text-primary); text-decoration: none; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta {
+            padding: 8px 20px; background: var(--accent); color: var(--bg); border: none; border-radius: 6px;
+            font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        .legal-page { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+        .legal-page h1 {
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.03em;
+            margin-bottom: 48px; line-height: 1.1;
+        }
+        .legal-page h1 .accent { color: var(--accent); }
+        .legal-page h2 { font-size: 1.2rem; font-weight: 600; margin: 40px 0 12px; color: var(--text-primary); }
+        .legal-page h3 { font-size: 1rem; font-weight: 600; margin: 28px 0 8px; color: var(--text-primary); }
+        .legal-page p, .legal-page li { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.75; margin-bottom: 12px; }
+        .legal-page a { color: var(--accent); text-decoration: none; }
+        .legal-page a:hover { text-decoration: underline; }
+        .legal-page ul { padding-left: 20px; margin-bottom: 16px; }
+
+        .legal-card {
+            background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px;
+            padding: 32px; margin-bottom: 32px;
+        }
+        .legal-card .label { font-size: 0.72rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+        .legal-card p { margin-bottom: 4px; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 48px 24px; text-align: center;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.82rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-copy { font-size: 0.78rem; color: #5A5854; }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links { display: none; }
+            .legal-page { padding: 100px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="/" class="nav-logo">Werkstatt <span>ONE</span></a>
+            <ul class="nav-links">
+                <li><a href="/funktionen">Funktionen</a></li>
+                <li><a href="/vision">Vision</a></li>
+                <li><a href="/loesungen">Lösungen</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+        <a href="/kostenlos-testen" class="nav-cta">Kostenlos testen</a>
+    </nav>
+
+    <main class="legal-page">
+        <h1>Impressum</h1>
+
+        <div class="legal-card">
+            <div class="label">Kontakt</div>
+            <p><strong>Flowbytesystems</strong></p>
+            <p>Auf dem Hohenborn 43</p>
+            <p>27777 Ganderkesee</p>
+            <p style="margin-top: 12px;">Telefon: <a href="tel:+4915119653560">0151 19653560</a></p>
+            <p>E-Mail: <a href="mailto:info@flowbytesystems.com">info@flowbytesystems.com</a></p>
+            <p>Website: <a href="https://www.flowbytesystems.com">www.flowbytesystems.com</a></p>
+        </div>
+
+        <div class="legal-card">
+            <div class="label">Vertreten durch</div>
+            <p><strong>Mattis Kruse</strong> — Inhaber / Geschäftsführer</p>
+        </div>
+
+        <div class="legal-card">
+            <div class="label">Umsatzsteuer-ID</div>
+            <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: 5712405837</p>
+        </div>
+
+        <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+        <p>Berufsbezeichnung: IT-Dienstleistungen / Unternehmensberatung</p>
+
+        <h2>EU-Streitschlichtung</h2>
+        <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a></p>
+        <p>Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+
+        <h2>Verbraucherstreitbeilegung / Universalschlichtungsstelle</h2>
+        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+        <h2>Haftung für Inhalte</h2>
+        <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+        <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+        <h2>Haftung für Links</h2>
+        <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.</p>
+        <p>Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+        <h2>Urheberrecht</h2>
+        <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Start</a>
+            <a href="/funktionen">Funktionen</a>
+            <a href="/vision">Vision</a>
+            <a href="/loesungen">Lösungen</a>
+            <a href="/kontakt">Kontakt</a>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+            <a href="/cookies">Cookies</a>
+        </div>
+        <p class="footer-copy">© 2026 Flowbytesystems · Werkstatt ONE · Auf dem Hohenborn 43, 27777 Ganderkesee</p>
+    </footer>
+</body>
+</html>

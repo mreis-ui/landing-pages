@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lösungen — Flowbytesystems</title>
+    <meta name="description" content="Cloud Analytics, Datenwissenschaft, Prozessautomatisierung und intelligente Dashboards. Flowbytesystems digitalisiert Ihren Betrieb.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0A0A0C; --bg-elevated: #111113; --bg-card: #18181B;
+            --text-primary: #F5F3F0; --text-secondary: #8C8A85; --text-tertiary: #5A5854;
+            --accent: #D4922A; --accent-hover: #E09E36;
+            --accent-subtle: rgba(212, 146, 42, 0.06); --border: #1E1D1A;
+            --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--font); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between;
+            background: rgba(10, 10, 12, 0.92); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(30, 29, 26, 0.5);
+        }
+        .nav-left { display: flex; align-items: center; gap: 48px; }
+        .nav-logo { font-weight: 700; font-size: 1.05rem; color: var(--text-primary); text-decoration: none; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta {
+            padding: 8px 20px; background: var(--accent); color: var(--bg); border: none; border-radius: 6px;
+            font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        .hero {
+            min-height: 60vh; display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; padding: 140px 24px 80px; position: relative;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -20%; left: 50%; transform: translateX(-50%);
+            width: 800px; height: 600px;
+            background: radial-gradient(ellipse, rgba(212, 146, 42, 0.06) 0%, transparent 70%); pointer-events: none;
+        }
+        .section-label {
+            display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
+            border: 1px solid var(--border); border-radius: 100px; font-size: 0.75rem; font-weight: 500;
+            color: var(--text-secondary); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 24px;
+        }
+        .section-label .dot { width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.06;
+            letter-spacing: -0.04em; max-width: 900px; margin-bottom: 28px; position: relative; z-index: 1;
+        }
+        .hero h1 .accent { color: var(--accent); }
+        .hero-sub {
+            font-size: clamp(1rem, 2vw, 1.2rem); color: var(--text-secondary);
+            max-width: 620px; line-height: 1.75; position: relative; z-index: 1;
+        }
+
+        .solutions-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+            max-width: 1000px; margin: 0 auto; padding: 0 24px 100px;
+        }
+        .solution-card {
+            background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px;
+            padding: 40px 32px; transition: all 0.35s ease; position: relative; overflow: hidden;
+        }
+        .solution-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: transparent; transition: background 0.35s ease;
+        }
+        .solution-card:hover { border-color: #2E2D2A; transform: translateY(-4px); }
+        .solution-card:hover::before { background: linear-gradient(90deg, transparent, var(--accent), transparent); }
+        .solution-icon {
+            width: 48px; height: 48px; background: var(--accent-subtle); border: 1px solid rgba(212,146,42,0.08);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; margin-bottom: 24px;
+        }
+        .solution-card h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 10px; letter-spacing: -0.01em; }
+        .solution-card p { color: var(--text-secondary); font-size: 0.9rem; line-height: 1.7; }
+
+        .highlight-section {
+            background: var(--bg-elevated); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+            padding: 100px 24px; text-align: center;
+        }
+        .highlight-section h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; letter-spacing: -0.03em;
+            max-width: 700px; margin: 0 auto 20px;
+        }
+        .highlight-section h2 .accent { color: var(--accent); }
+        .highlight-section p {
+            color: var(--text-secondary); font-size: 1.05rem; max-width: 620px; margin: 0 auto 40px; line-height: 1.75;
+        }
+        .btn-primary {
+            display: inline-flex; align-items: center; gap: 8px; padding: 16px 36px;
+            background: var(--accent); color: var(--bg); border: none; border-radius: 10px;
+            font-size: 0.95rem; font-weight: 600; text-decoration: none; transition: all 0.25s;
+        }
+        .btn-primary:hover { background: var(--accent-hover); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(212,146,42,0.25); }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 48px 24px; text-align: center;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.82rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-copy { font-size: 0.78rem; color: #5A5854; }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links { display: none; }
+            .solutions-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="/" class="nav-logo">Werkstatt <span>ONE</span></a>
+            <ul class="nav-links">
+                <li><a href="/funktionen">Funktionen</a></li>
+                <li><a href="/vision">Vision</a></li>
+                <li><a href="/loesungen">Lösungen</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+        <a href="/kostenlos-testen" class="nav-cta">Kostenlos testen</a>
+    </nav>
+
+    <section class="hero">
+        <div class="section-label"><span class="dot"></span> Unsere Dienstleistungen</div>
+        <h1>Das neue Zeitalter der <span class="accent">beschleunigten Analytik.</span></h1>
+        <p class="hero-sub">Von Cloud-Migration über KI-gestützte Prognosen bis zur vollautomatischen Prozesssteuerung — wir bringen Ihren Betrieb auf das nächste Level.</p>
+    </section>
+
+    <div class="solutions-grid">
+        <div class="solution-card">
+            <div class="solution-icon">☁️</div>
+            <h3>Cloud Analytics Modernisierung</h3>
+            <p>Wir heben Ihre Daten aus Excel und Altsystemen in eine skalierbare Cloud-Umgebung. ETL-Pipelines, saubere Datenmodelle und DSGVO-konforme Speicherung — inklusive Migration und Schulung Ihres Teams.</p>
+        </div>
+        <div class="solution-card">
+            <div class="solution-icon">🧠</div>
+            <h3>Beschleunigung der Datenwissenschaft</h3>
+            <p>Vom Problem zum produktiven Modell: Wir entwickeln Use-Cases mit direktem ROI. Prototypen, MVPs und Monitoring für Teilebedarf, Rückläufer-Prognosen und Auslastungsoptimierung.</p>
+        </div>
+        <div class="solution-card">
+            <div class="solution-icon">🔗</div>
+            <h3>Nahtlose Integration</h3>
+            <p>Nahtlose Integration in Ihre bestehende IT-Landschaft. Wir verbinden Teileportale, Finanzsysteme und Kommunikationskanäle zu einem durchgängigen Datenfluss — revisionssicher und wartbar.</p>
+        </div>
+        <div class="solution-card">
+            <div class="solution-icon">📊</div>
+            <h3>Datengestützte Entscheidungen</h3>
+            <p>Transparente Kennzahlen statt Bauchgefühl. Echtzeit-Dashboards, Alerts und rollenbasierte Reports für Ihr gesamtes Team.</p>
+        </div>
+    </div>
+
+    <section class="highlight-section">
+        <h2>Prozesse automatisieren, <span class="accent">Team entlasten.</span></h2>
+        <p>Belege prüfen, Erinnerungen versenden, Termine buchen, Genehmigungen einholen — vollautomatisch. Wir eliminieren Medienbrüche und manuelle Routinen. Ihr Team gewinnt Zeit für wertschöpfende Aufgaben, während Workflows im Hintergrund laufen.</p>
+        <a href="/kontakt" class="btn-primary">Jetzt beraten lassen →</a>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Start</a>
+            <a href="/funktionen">Funktionen</a>
+            <a href="/vision">Vision</a>
+            <a href="/loesungen">Lösungen</a>
+            <a href="/kontakt">Kontakt</a>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+            <a href="/cookies">Cookies</a>
+        </div>
+        <p class="footer-copy">© 2026 Flowbytesystems · Werkstatt ONE · Auf dem Hohenborn 43, 27777 Ganderkesee</p>
+    </footer>
+</body>
+</html>

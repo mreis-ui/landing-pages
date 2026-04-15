@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datenschutzerklärung — Flowbytesystems</title>
+    <meta name="description" content="Datenschutzerklärung der Flowbytesystems. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0A0A0C; --bg-elevated: #111113; --text-primary: #F5F3F0;
+            --text-secondary: #8C8A85; --accent: #D4922A; --accent-hover: #E09E36;
+            --border: #1E1D1A; --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body { font-family: var(--font); background: var(--bg); color: var(--text-primary); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            padding: 0 40px; height: 64px; display: flex; align-items: center; justify-content: space-between;
+            background: rgba(10, 10, 12, 0.92); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(30, 29, 26, 0.5);
+        }
+        .nav-left { display: flex; align-items: center; gap: 48px; }
+        .nav-logo { font-weight: 700; font-size: 1.05rem; color: var(--text-primary); text-decoration: none; }
+        .nav-logo span { color: var(--accent); }
+        .nav-links { display: flex; gap: 32px; list-style: none; }
+        .nav-links a { font-size: 0.85rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--text-primary); }
+        .nav-cta {
+            padding: 8px 20px; background: var(--accent); color: var(--bg); border: none; border-radius: 6px;
+            font-size: 0.82rem; font-weight: 600; text-decoration: none; transition: all 0.2s;
+        }
+        .nav-cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
+
+        .legal-page { max-width: 760px; margin: 0 auto; padding: 120px 24px 80px; }
+        .legal-page h1 {
+            font-size: clamp(2rem, 4vw, 3rem); font-weight: 700; letter-spacing: -0.03em;
+            margin-bottom: 12px; line-height: 1.1;
+        }
+        .legal-page .subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 48px; }
+        .legal-page h2 { font-size: 1.2rem; font-weight: 600; margin: 40px 0 12px; color: var(--text-primary); }
+        .legal-page h3 { font-size: 1rem; font-weight: 600; margin: 28px 0 8px; color: var(--text-primary); }
+        .legal-page p, .legal-page li { color: var(--text-secondary); font-size: 0.92rem; line-height: 1.75; margin-bottom: 12px; }
+        .legal-page a { color: var(--accent); text-decoration: none; }
+        .legal-page a:hover { text-decoration: underline; }
+        .legal-page ul { padding-left: 20px; margin-bottom: 16px; }
+
+        .legal-card {
+            background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 16px;
+            padding: 32px; margin-bottom: 32px;
+        }
+        .legal-card .label { font-size: 0.72rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 16px; }
+        .legal-card p { margin-bottom: 4px; }
+
+        footer {
+            border-top: 1px solid var(--border); padding: 48px 24px; text-align: center;
+        }
+        .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
+        .footer-links a { font-size: 0.82rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+        .footer-links a:hover { color: var(--text-primary); }
+        .footer-copy { font-size: 0.78rem; color: #5A5854; }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 20px; }
+            .nav-links { display: none; }
+            .legal-page { padding: 100px 20px 60px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="/" class="nav-logo">Werkstatt <span>ONE</span></a>
+            <ul class="nav-links">
+                <li><a href="/funktionen">Funktionen</a></li>
+                <li><a href="/vision">Vision</a></li>
+                <li><a href="/loesungen">Lösungen</a></li>
+                <li><a href="/kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+        <a href="/kostenlos-testen" class="nav-cta">Kostenlos testen</a>
+    </nav>
+
+    <main class="legal-page">
+        <h1>Datenschutzerklärung</h1>
+        <p class="subtitle">Stand: November 2025</p>
+
+        <h2>1. Verantwortlicher</h2>
+        <div class="legal-card">
+            <p><strong>Flowbytesystems</strong></p>
+            <p>Auf dem Hohenborn 43, 27777 Ganderkesee, Deutschland</p>
+            <p style="margin-top: 8px;">Kontakt: Maximilian Reising</p>
+            <p>E-Mail: <a href="mailto:maximilian.reising@flowbytesystems.com">maximilian.reising@flowbytesystems.com</a></p>
+            <p>Telefon: <a href="tel:+4915119653560">0151 19653560</a></p>
+            <p>Geschäftsführer: Mattis Kruse</p>
+        </div>
+
+        <h2>2. Allgemeine Hinweise</h2>
+        <p>Der Schutz Ihrer persönlichen Daten ist uns ein wichtiges Anliegen. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, TKG 2021). In dieser Datenschutzerklärung informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung auf unserer Website.</p>
+
+        <h3>3.1 Allgemeine Nutzung der Website</h3>
+        <p>Bei jedem Zugriff auf unsere Website werden automatisch folgende Daten durch Ihren Browser übermittelt und von uns gespeichert:</p>
+        <ul>
+            <li>IP-Adresse des zugreifenden Rechners</li>
+            <li>Datum und Uhrzeit des Zugriffs</li>
+            <li>Name und URL der abgerufenen Datei</li>
+            <li>Website, von der aus der Zugriff erfolgt (Referrer-URL)</li>
+            <li>Verwendeter Browser und ggf. das Betriebssystem Ihres Rechners</li>
+        </ul>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Bereitstellung und Sicherheit unserer Website)</p>
+        <p>Speicherdauer: Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer Erhebung nicht mehr erforderlich sind, in der Regel nach 7 Tagen.</p>
+
+        <h3>3.2 Kontaktformular</h3>
+        <p>Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert.</p>
+        <p>Verarbeitete Daten:</p>
+        <ul>
+            <li>Name</li>
+            <li>E-Mail-Adresse</li>
+            <li>Telefonnummer (optional)</li>
+            <li>Unternehmen (optional)</li>
+            <li>Ihre Nachricht</li>
+        </ul>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) bzw. Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+        <p>Speicherdauer: Die Daten werden gelöscht, sobald die Bearbeitung Ihrer Anfrage abgeschlossen ist und keine gesetzlichen Aufbewahrungspflichten bestehen.</p>
+
+        <h3>3.3 E-Mail-Kontakt</h3>
+        <p>Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten (E-Mail-Adresse, ggf. Name und Telefonnummer) bei uns gespeichert, um Ihre Anfrage zu bearbeiten.</p>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) bzw. Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung)</p>
+
+        <h2>4. Cookies</h2>
+        <p>Unsere Website verwendet Cookies. Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden und die Ihr Browser speichert.</p>
+
+        <h3>4.1 Technisch notwendige Cookies</h3>
+        <p>Diese Cookies sind erforderlich, um die Funktionalität der Website zu gewährleisten.</p>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+
+        <h3>4.2 Analyse-Cookies</h3>
+        <p>Wir verwenden Cookies zu statistischen Zwecken und zur Verbesserung unserer Website. Diese Cookies werden nur mit Ihrer Einwilligung gesetzt.</p>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung)</p>
+        <p>Sie können Ihre Cookie-Einstellungen jederzeit über unser Cookie-Banner anpassen oder Cookies in Ihren Browser-Einstellungen deaktivieren.</p>
+
+        <h2>5. Hosting</h2>
+        <p>Unsere Website wird bei Vercel Inc., 340 S Lemon Ave #4133, Walnut, CA 91789, USA gehostet. Vercel verarbeitet Daten u.a. in den USA. Vercel ist aktiver Teilnehmer des EU-US Data Privacy Framework.</p>
+        <p>Weitere Informationen: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Datenschutzerklärung von Vercel</a></p>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse)</p>
+
+        <h2>6. Google Analytics / Google Tag Manager</h2>
+        <p>Wir nutzen Google Tag Manager und Google Ads Conversion Tracking zur Analyse des Nutzerverhaltens und zur Messung unserer Werbekampagnen. Die Daten werden anonymisiert erfasst und dienen der Verbesserung unserer Website.</p>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (mit Ihrer Einwilligung)</p>
+
+        <h2>7. Social Media</h2>
+        <h3>7.1 LinkedIn</h3>
+        <p>Unsere Website enthält Verlinkungen zu unserem LinkedIn-Profil. Beim Besuch dieser externen Seiten gelten die Datenschutzbestimmungen von LinkedIn.</p>
+        <p>Datenschutzerklärung LinkedIn: <a href="https://www.linkedin.com/legal/privacy-policy" target="_blank" rel="noopener">https://www.linkedin.com/legal/privacy-policy</a></p>
+
+        <h3>7.2 Social-Media-Plugins</h3>
+        <p>Wir verwenden keine Social-Media-Plugins, die automatisch Daten an Dritte übertragen. Links zu sozialen Netzwerken erfolgen als einfache Hyperlinks.</p>
+
+        <h2>8. Ihre Rechte</h2>
+        <p>Sie haben folgende Rechte bezüglich Ihrer personenbezogenen Daten:</p>
+        <ul>
+            <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+            <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+            <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+            <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+            <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+            <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
+            <li>Recht auf Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
+        </ul>
+        <p>Sie haben das Recht, sich bei einer Datenschutz-Aufsichtsbehörde zu beschweren. Zuständige Behörde: <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html" target="_blank" rel="noopener">Die für Ihr Bundesland zuständige Datenschutzbehörde</a></p>
+
+        <h2>9. SSL- bzw. TLS-Verschlüsselung</h2>
+        <p>Diese Website nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von "http://" auf "https://" wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.</p>
+
+        <h2>10. Weitergabe von Daten an Dritte</h2>
+        <p>Eine Weitergabe Ihrer Daten an Dritte erfolgt nur:</p>
+        <ul>
+            <li>mit Ihrer ausdrücklichen Einwilligung (Art. 6 Abs. 1 lit. a DSGVO)</li>
+            <li>wenn dies zur Vertragserfüllung erforderlich ist (Art. 6 Abs. 1 lit. b DSGVO)</li>
+            <li>wenn eine gesetzliche Verpflichtung besteht (Art. 6 Abs. 1 lit. c DSGVO)</li>
+            <li>wenn dies zur Wahrung berechtigter Interessen erforderlich ist (Art. 6 Abs. 1 lit. f DSGVO)</li>
+        </ul>
+
+        <h2>11. Datenverarbeitung bei Vertragsanbahnung und -erfüllung</h2>
+        <p>Wenn Sie unsere Dienstleistungen in Anspruch nehmen, verarbeiten wir folgende Daten:</p>
+        <ul>
+            <li>Firmendaten (Name, Anschrift, Kontaktdaten)</li>
+            <li>Ansprechpartner</li>
+            <li>Vertragsdaten</li>
+            <li>Abrechnungsdaten</li>
+        </ul>
+        <p>Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung)</p>
+        <p>Speicherdauer: Die Daten werden nach Ablauf der gesetzlichen Aufbewahrungsfristen (in der Regel 10 Jahre nach §147 AO, §257 HGB) gelöscht.</p>
+
+        <h2>12. Aktualität</h2>
+        <p>Diese Datenschutzerklärung ist aktuell gültig und hat den Stand November 2025.</p>
+
+        <h2>13. Kontakt</h2>
+        <div class="legal-card">
+            <p>Bei Fragen zum Datenschutz können Sie sich jederzeit an uns wenden:</p>
+            <p style="margin-top: 8px;"><strong>Flowbytesystems</strong></p>
+            <p>Adresse: Auf dem Hohenborn 43, 27777 Ganderkesee</p>
+            <p>E-Mail: <a href="mailto:info@flowbytesystems.com">info@flowbytesystems.com</a></p>
+            <p>Telefon: <a href="tel:+4915119653560">0151 19653560</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="/">Start</a>
+            <a href="/funktionen">Funktionen</a>
+            <a href="/vision">Vision</a>
+            <a href="/loesungen">Lösungen</a>
+            <a href="/kontakt">Kontakt</a>
+            <a href="/impressum">Impressum</a>
+            <a href="/datenschutz">Datenschutz</a>
+            <a href="/cookies">Cookies</a>
+        </div>
+        <p class="footer-copy">© 2026 Flowbytesystems · Werkstatt ONE · Auf dem Hohenborn 43, 27777 Ganderkesee</p>
+    </footer>
+</body>
+</html>

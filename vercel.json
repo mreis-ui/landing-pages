@@ -18,6 +18,10 @@
     { "source": "/index", "destination": "/", "statusCode": 301 },
     { "source": "/awareness", "destination": "/werkstatt-software", "statusCode": 301 },
     { "source": "/consideration", "destination": "/funktionen", "statusCode": 301 },
-    { "source": "/decision", "destination": "/kostenlos-testen", "statusCode": 301 }
+    { "source": "/decision", "destination": "/kostenlos-testen", "statusCode": 301 },
+    { "source": "/contact-3", "destination": "/kontakt", "statusCode": 301 },
+    { "source": "/lösungen", "destination": "/loesungen", "statusCode": 301 },
+    { "source": "/l%C3%B6sungen", "destination": "/loesungen", "statusCode": 301 },
+    { "source": "/loslegen", "destination": "/kostenlos-testen", "statusCode": 301 }
   ]
 }

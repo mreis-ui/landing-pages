@@ -317,9 +317,9 @@
                 'event_callback': function() {}
             });
 
-            // Push to dataLayer for GTM
+            // Push to dataLayer for GTM — event name matches GTM trigger "Formular_abgeschickt"
             dataLayer.push({
-                'event': 'trial_signup',
+                'event': 'Formular_abgeschickt',
                 'user_email': data.email,
                 'user_name': data.name,
                 'company': data.company,

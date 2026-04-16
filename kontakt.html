@@ -26,10 +26,10 @@
 
     <style>
         :root {
-            --bg: #0A0A0C; --bg-elevated: #111113; --bg-card: #18181B;
-            --text-primary: #F5F3F0; --text-secondary: #8C8A85; --text-tertiary: #5A5854;
-            --accent: #D4922A; --accent-hover: #E09E36;
-            --accent-subtle: rgba(212, 146, 42, 0.06); --border: #1E1D1A;
+            --bg: #0F1729; --bg-elevated: #141E35; --bg-card: #1A2744;
+            --text-primary: #F5F3F0; --text-secondary: #8C9AB5; --text-tertiary: #5A6B85;
+            --accent: #FF6B00; --accent-hover: #FF8533;
+            --accent-subtle: rgba(255, 107, 0, 0.06); --border: #1E2D4A;
             --green: #4ADE80;
             --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
@@ -71,7 +71,7 @@
             display: flex; gap: 16px; align-items: flex-start;
         }
         .contact-item-icon {
-            width: 40px; height: 40px; background: var(--accent-subtle); border: 1px solid rgba(212,146,42,0.08);
+            width: 40px; height: 40px; background: var(--accent-subtle); border: 1px solid rgba(255,107,0,0.08);
             border-radius: 10px; display: flex; align-items: center; justify-content: center;
             font-size: 1.1rem; flex-shrink: 0;
         }
@@ -102,7 +102,7 @@
             border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 600;
             font-family: var(--font); cursor: pointer; transition: all 0.25s; margin-top: 4px;
         }
-        .submit-btn:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 32px rgba(212,146,42,0.2); }
+        .submit-btn:hover { background: var(--accent-hover); transform: translateY(-1px); box-shadow: 0 8px 32px rgba(255,107,0,0.2); }
 
         .form-success { text-align: center; padding: 40px 0; animation: fadeIn 0.5s ease; }
         .form-success .icon { font-size: 3rem; margin-bottom: 16px; }
@@ -116,7 +116,7 @@
         .footer-links { display: flex; justify-content: center; gap: 24px; margin-bottom: 16px; flex-wrap: wrap; }
         .footer-links a { font-size: 0.82rem; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
         .footer-links a:hover { color: var(--text-primary); }
-        .footer-copy { font-size: 0.78rem; color: #5A5854; }
+        .footer-copy { font-size: 0.78rem; color: #5A6B85; }
 
         @media (max-width: 768px) {
             nav { padding: 0 20px; }

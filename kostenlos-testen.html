@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Werkstatt ONE — 30 Tage kostenlos testen</title>
-    <meta name="description" content="Testen Sie Werkstatt ONE 30 Tage kostenlos. Keine Kreditkarte nötig. In 5 Minuten startklar. Die ERP-Software für KFZ-Betriebe.">
+    <meta name="description" content="Testen Sie Werkstatt ONE 30 Tage kostenlos. Keine Kreditkarte nötig. Die ERP-Software für KFZ-Betriebe.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -31,14 +31,14 @@
 
     <style>
         :root {
-            --bg: #0A0A0C;
-            --bg-elevated: #111113;
-            --bg-card: #18181B;
+            --bg: #0F1729;
+            --bg-elevated: #141E35;
+            --bg-card: #1A2744;
             --text-primary: #F5F3F0;
-            --text-secondary: #8C8A85;
-            --gold: #D4922A;
-            --gold-hover: #E09E36;
-            --gold-subtle: rgba(212, 146, 42, 0.08);
+            --text-secondary: #8C9AB5;
+            --gold: #FF6B00;
+            --gold-hover: #FF8533;
+            --gold-subtle: rgba(255, 107, 0, 0.08);
             --border: #2A2824;
             --radius: 8px;
             --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -236,7 +236,7 @@
     <section class="hero">
         <div class="hero-badge"><span class="dot"></span> Jetzt verfügbar — sofort loslegen</div>
         <h1>Jetzt 30 Tage <span class="accent">kostenlos testen.</span></h1>
-        <p>Keine Kreditkarte. Keine Verpflichtung. In 5 Minuten ist Ihr Betrieb digital aufgestellt. Überzeugen Sie sich selbst.</p>
+        <p>Keine Kreditkarte. Keine Verpflichtung. Überzeugen Sie sich selbst.</p>
     </section>
 
     <section class="signup-section" id="signup">
@@ -300,10 +300,17 @@
         const AGENT_ID = 'agent_9301kp5p12a7fnbrbdmtt99vvqnv';
         let widgetLaunched = false;
 
-        // ─── GCLID Capture ───
-        const gclidFromUrl = new URLSearchParams(window.location.search).get('gclid');
+        // ─── GCLID + Funnel Stage Capture ───
+        const urlParams = new URLSearchParams(window.location.search);
+        const gclidFromUrl = urlParams.get('gclid');
         if (gclidFromUrl) { try { sessionStorage.setItem('gclid', gclidFromUrl); } catch(e) {} }
         const gclid = gclidFromUrl || sessionStorage.getItem('gclid') || '';
+
+        // Capture utm_funnel from URL or sessionStorage (persisted from previous pages)
+        const utmFunnelFromUrl = urlParams.get('utm_funnel');
+        if (utmFunnelFromUrl) { try { sessionStorage.setItem('utm_funnel', utmFunnelFromUrl); } catch(e) {} }
+        const funnelStage = utmFunnelFromUrl || sessionStorage.getItem('utm_funnel') || 'decision';
+        const stageTag = { awareness: 'stage_awareness', consideration: 'stage_consideration', decision: 'stage_decision' }[funnelStage] || 'stage_decision';
 
         function handleSubmit(e) {
             e.preventDefault();
@@ -353,9 +360,10 @@
                     ki_consent: kiConsent,
                     gclid: gclid,
                     source: 'Landing Page - Decision',
+                    funnel_stage: funnelStage,
                     tags: kiConsent
-                        ? 'src_google_ads,stage_1_chaos,optin_ki_call_consent'
-                        : 'src_google_ads,stage_1_chaos,synthflow_disabled'
+                        ? `src_google_ads,${stageTag},optin_ki_call_consent`
+                        : `src_google_ads,${stageTag},synthflow_disabled`
                 })
             }).catch(err => console.error('Lead submission:', err));
 

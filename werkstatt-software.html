@@ -27,14 +27,14 @@
 
     <style>
         :root {
-            --bg: #0A0A0C;
-            --bg-elevated: #111113;
-            --bg-card: #18181B;
+            --bg: #0F1729;
+            --bg-elevated: #141E35;
+            --bg-card: #1A2744;
             --text-primary: #F5F3F0;
-            --text-secondary: #8C8A85;
-            --gold: #D4922A;
-            --gold-hover: #E09E36;
-            --gold-subtle: rgba(212, 146, 42, 0.08);
+            --text-secondary: #8C9AB5;
+            --gold: #FF6B00;
+            --gold-hover: #FF8533;
+            --gold-subtle: rgba(255, 107, 0, 0.08);
             --border: #2A2824;
             --radius: 8px;
             --font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -265,7 +265,7 @@
             max-width: 900px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 48px;
             text-align: center;
         }
@@ -378,10 +378,6 @@
                 <div class="label">pro Woche verlieren viele Betriebe an Verwaltung</div>
             </div>
             <div class="stat-item">
-                <div class="number">5 Min.</div>
-                <div class="label">bis Ihr Betrieb mit Werkstatt ONE digital läuft</div>
-            </div>
-            <div class="stat-item">
                 <div class="number">30 Tage</div>
                 <div class="label">kostenlos testen · ohne Risiko · ohne Kreditkarte</div>
             </div>
@@ -401,20 +397,24 @@
     </footer>
 
     <script>
-        // ─── GCLID Capture ───
-        // Captures Google Click ID from URL for offline conversion matching
+        // ─── GCLID + Funnel Stage Capture ───
+        // Captures Google Click ID + funnel stage for cross-page tracking
         (function() {
             const params = new URLSearchParams(window.location.search);
             const gclid = params.get('gclid');
             if (gclid) {
                 try { sessionStorage.setItem('gclid', gclid); } catch(e) {}
-                // Append gclid to all outbound CTA links
-                document.querySelectorAll('a[href*="consideration"], a[href*="decision"]').forEach(a => {
-                    const url = new URL(a.href, window.location.origin);
-                    url.searchParams.set('gclid', gclid);
-                    a.href = url.toString();
-                });
             }
+            // Persist funnel stage — this page = awareness
+            try { sessionStorage.setItem('utm_funnel', 'awareness'); } catch(e) {}
+
+            // Append gclid + utm_funnel to all outbound CTA links
+            document.querySelectorAll('a[href*="funktionen"], a[href*="kostenlos-testen"]').forEach(a => {
+                const url = new URL(a.href, window.location.origin);
+                if (gclid) url.searchParams.set('gclid', gclid);
+                if (!url.searchParams.has('utm_funnel')) url.searchParams.set('utm_funnel', 'awareness');
+                a.href = url.toString();
+            });
         })();
 
         // ─── Scroll Depth Tracking ───

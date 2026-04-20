@@ -27,13 +27,13 @@
     { "source": "/testen", "destination": "/kostenlos-testen", "statusCode": 301 }
   ],
   "rewrites": [
-    { "source": "/s/1", "destination": "/index.html" },
-    { "source": "/s/2", "destination": "/index.html" },
-    { "source": "/s/3", "destination": "/werkstatt-software.html" },
-    { "source": "/s/4", "destination": "/funktionen.html" },
-    { "source": "/s/5", "destination": "/loesungen.html" },
-    { "source": "/s/6", "destination": "/kostenlos-testen.html" },
-    { "source": "/s/7", "destination": "/kostenlos-testen.html" },
-    { "source": "/s/8", "destination": "/kostenlos-testen.html" }
+    { "source": "/s/1", "destination": "/" },
+    { "source": "/s/2", "destination": "/" },
+    { "source": "/s/3", "destination": "/werkstatt-software" },
+    { "source": "/s/4", "destination": "/funktionen" },
+    { "source": "/s/5", "destination": "/loesungen" },
+    { "source": "/s/6", "destination": "/kostenlos-testen" },
+    { "source": "/s/7", "destination": "/kostenlos-testen" },
+    { "source": "/s/8", "destination": "/kostenlos-testen" }
   ]
 }

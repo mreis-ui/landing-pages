@@ -24,17 +24,16 @@
     { "source": "/l%C3%B6sungen", "destination": "/loesungen", "statusCode": 301 },
     { "source": "/loslegen", "destination": "/kostenlos-testen", "statusCode": 301 },
     { "source": "/demo", "destination": "/kostenlos-testen", "statusCode": 301 },
-    { "source": "/testen", "destination": "/kostenlos-testen", "statusCode": 301 },
-    { "source": "/preise", "destination": "/preise.html", "statusCode": 301 }
+    { "source": "/testen", "destination": "/kostenlos-testen", "statusCode": 301 }
   ],
   "rewrites": [
-    { "source": "/s/1", "destination": "/index.html?stage=1" },
-    { "source": "/s/2", "destination": "/index.html?stage=2" },
-    { "source": "/s/3", "destination": "/werkstatt-software.html?stage=3" },
-    { "source": "/s/4", "destination": "/funktionen.html?stage=4" },
-    { "source": "/s/5", "destination": "/loesungen.html?stage=5" },
-    { "source": "/s/6", "destination": "/kostenlos-testen.html?stage=6" },
-    { "source": "/s/7", "destination": "/kostenlos-testen.html?stage=7" },
-    { "source": "/s/8", "destination": "/kostenlos-testen.html?stage=8" }
+    { "source": "/s/1", "destination": "/index.html" },
+    { "source": "/s/2", "destination": "/index.html" },
+    { "source": "/s/3", "destination": "/werkstatt-software.html" },
+    { "source": "/s/4", "destination": "/funktionen.html" },
+    { "source": "/s/5", "destination": "/loesungen.html" },
+    { "source": "/s/6", "destination": "/kostenlos-testen.html" },
+    { "source": "/s/7", "destination": "/kostenlos-testen.html" },
+    { "source": "/s/8", "destination": "/kostenlos-testen.html" }
   ]
 }

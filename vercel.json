@@ -34,6 +34,15 @@
     { "source": "/s/5", "destination": "/loesungen" },
     { "source": "/s/6", "destination": "/kostenlos-testen" },
     { "source": "/s/7", "destination": "/kostenlos-testen" },
-    { "source": "/s/8", "destination": "/kostenlos-testen" }
+    { "source": "/s/8", "destination": "/kostenlos-testen" },
+
+    { "source": "/online-termine",          "destination": "/funktionen" },
+    { "source": "/leihwagen/digital",       "destination": "/funktionen" },
+    { "source": "/tuev-reminder/automatisch", "destination": "/funktionen" },
+    { "source": "/mahnwesen/automatisch",   "destination": "/funktionen" },
+    { "source": "/werkstatt-one/demo",      "destination": "/kostenlos-testen" },
+    { "source": "/foerderung/mut-zu",       "destination": "/preise" },
+    { "source": "/oldenburg/werkstatt",     "destination": "/werkstatt-software" },
+    { "source": "/werkstatt/alltag",        "destination": "/werkstatt-software" }
   ]
 }

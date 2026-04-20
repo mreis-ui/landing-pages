@@ -1,1 +1,19 @@
-/*    /index.html   200
+# Umlaut / Legacy URL Redirects
+/lösungen             /loesungen.html           301
+/l%C3%B6sungen        /loesungen.html           301
+/demo                 /kostenlos-testen.html    301
+/testen               /kostenlos-testen.html    301
+/preise               /preise.html              301!
+
+# Stage Router (Story-Circle Funnel — Tracking-Deeplinks)
+/s/1                  /index.html?stage=1       200
+/s/2                  /index.html?stage=2       200
+/s/3                  /werkstatt-software.html?stage=3  200
+/s/4                  /funktionen.html?stage=4  200
+/s/5                  /loesungen.html?stage=5   200
+/s/6                  /kostenlos-testen.html?stage=6 200
+/s/7                  /kostenlos-testen.html?stage=7 200
+/s/8                  /kostenlos-testen.html?stage=8 200
+
+# SPA fallback
+/*                    /index.html               200

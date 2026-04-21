@@ -218,11 +218,13 @@
         <p class="footer-copy">© 2026 Flowbytesystems · Werkstatt ONE · Auf dem Hohenborn 43, 27777 Ganderkesee</p>
     </footer>
 
+    <script src="/tracking.js"></script>
     <script>
         function handleContactSubmit(e) {
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = Object.fromEntries(formData.entries());
+            const attr = (window.FLOWBYTE_ATTR || {});
 
             // POST to GHL webhook
             const PROXY_URL = 'https://ghl-proxy.flowbytesystems.com/api/lead';
@@ -237,6 +239,16 @@
                     phone: data.phone || '',
                     company: data.company || '',
                     message: data.message,
+                    gclid:              attr.gclid              || '',
+                    utm_source:         attr.utm_source         || '',
+                    utm_medium:         attr.utm_medium         || '',
+                    utm_campaign:       attr.utm_campaign       || '',
+                    utm_content:        attr.utm_content        || '',
+                    utm_term:           attr.utm_term           || '',
+                    ads_campaign_name:  attr.ads_campaign_name  || '',
+                    ads_ad_group_name:  attr.ads_ad_group_name  || '',
+                    first_landing_page: attr.first_landing_page || '',
+                    first_touch_at:     attr.first_touch_at     || '',
                     source: 'Website - Kontakt',
                     tags: 'src_website,type_contact_form'
                 })

@@ -295,6 +295,9 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Flowbyte Attribution (gclid/utm_*) -->
+    <script src="/tracking.js"></script>
+
     <script>
         const AGENT_ID = 'agent_9301kp5p12a7fnbrbdmtt99vvqnv';
         let widgetLaunched = false;
@@ -347,6 +350,7 @@
                 ? 'https://services.leadconnectorhq.com/hooks/epcWZcMAjE6RqtFxTSBq/webhook-trigger/0f54a7ab-ea10-4713-8b10-eb497607cb3a'
                 : 'https://ghl-proxy.flowbytesystems.com/api/lead'; // ← Cloudflare Worker URL
             
+            const attr = (window.FLOWBYTE_ATTR || {});
             fetch(PROXY_URL, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -357,7 +361,16 @@
                     phone: data.phone || '',
                     company: data.company,
                     ki_consent: kiConsent,
-                    gclid: gclid,
+                    gclid: attr.gclid || gclid,
+                    utm_source:         attr.utm_source         || '',
+                    utm_medium:         attr.utm_medium         || '',
+                    utm_campaign:       attr.utm_campaign       || '',
+                    utm_content:        attr.utm_content        || '',
+                    utm_term:           attr.utm_term           || '',
+                    ads_campaign_name:  attr.ads_campaign_name  || '',
+                    ads_ad_group_name:  attr.ads_ad_group_name  || '',
+                    first_landing_page: attr.first_landing_page || '',
+                    first_touch_at:     attr.first_touch_at     || '',
                     source: 'Landing Page - Decision',
                     funnel_stage: funnelStage,
                     tags: kiConsent

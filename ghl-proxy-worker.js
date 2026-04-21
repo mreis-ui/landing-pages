@@ -52,13 +52,27 @@ export default {
         tags.push('synthflow_disabled');
       }
 
-      // Build custom fields for GCLID + source tracking
+      // Build custom fields — maps to GHL fieldKeys (contact.<name>)
       const customFields = [];
-      if (data.gclid) {
-        customFields.push({ key: 'gclid', field_value: data.gclid });
+      const attrMap = {
+        gclid:              'contact.gclid',
+        utm_source:         'contact.utm_source',
+        utm_medium:         'contact.utm_medium',
+        utm_campaign:       'contact.utm_campaign',
+        utm_content:        'contact.utm_content',
+        utm_term:           'contact.utm_term',
+        first_landing_page: 'contact.first_landing_page',
+        first_touch_at:     'contact.first_touch_at',
+        ads_campaign_name:  'contact.ads_campaign_name',
+        ads_ad_group_name:  'contact.ads_ad_group_name'
+      };
+      for (const [incoming, fieldKey] of Object.entries(attrMap)) {
+        if (data[incoming]) {
+          customFields.push({ key: fieldKey, field_value: data[incoming] });
+        }
       }
       if (data.source) {
-        customFields.push({ key: 'lead_source_detail', field_value: data.source });
+        customFields.push({ key: 'contact.lead_source_detail', field_value: data.source });
       }
 
       // Create contact in GHL

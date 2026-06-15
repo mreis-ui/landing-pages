@@ -31,7 +31,7 @@ const priceFaq = [
   },
   {
     q: "Lässt sich mein bestehendes System anbinden?",
-    a: "Ja. Ab dem Pro-Tarif binden wir ERP-Systeme wie Profi32 an. In der Regel sind Sie an einem Tag startklar.",
+    a: "Ja. Wir binden bestehende ERP- und Branchensysteme wie Profi32 an, sodass Ihre Daten zwischen den Systemen fließen. Den genauen Umfang der Anbindung stimmen wir im persönlichen Gespräch mit Ihnen ab — in der Regel sind Sie an einem Tag startklar.",
   },
 ];
 

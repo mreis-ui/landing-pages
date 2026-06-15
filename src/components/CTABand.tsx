@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { ButtonLink } from "@/components/ui/Button";
 import { company, trustSignals } from "@/lib/site";
@@ -27,10 +27,16 @@ export function CTABand({
               Beratung anfragen
             </ButtonLink>
           </div>
-          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 font-mono text-2xs uppercase tracking-wider text-ink-muted">
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-2">
             {trustSignals.map((t) => (
-              <li key={t} className="flex items-center gap-2">
-                <span className="h-1 w-1 rounded-full bg-brand-orange" />
+              <li
+                key={t}
+                className="inline-flex items-center gap-1.5 rounded-pill border border-line bg-surface px-3.5 py-1.5 text-sm text-ink-secondary"
+              >
+                <Check
+                  className="h-3.5 w-3.5 shrink-0 text-status-success"
+                  strokeWidth={2.5}
+                />
                 {t}
               </li>
             ))}

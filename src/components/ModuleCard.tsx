@@ -17,7 +17,7 @@ export function ModuleCard({
     <Link
       href={`/funktionen/${module.slug}`}
       className={cn(
-        "group relative flex flex-col rounded-lg border border-line bg-surface-elevated p-6 transition-colors hover:border-line-strong",
+        "group relative flex flex-col rounded-lg border border-line bg-surface-elevated p-6 transition-all duration-200 ease-out-smooth hover:-translate-y-0.5 hover:border-line-strong hover:shadow-md motion-reduce:transform-none",
         className,
       )}
     >

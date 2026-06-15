@@ -18,7 +18,7 @@ const icons = [FileWarning, Clock, PhoneOff];
 
 const stats = [
   { value: pricing.savings, label: "gespart bei Pilotkunde KFZ-Kruse aus Ganderkesee" },
-  { value: pricing.monthly, label: "pro Monat · monatlich kündbar" },
+  { value: pricing.subsidy, label: `${pricing.subsidyName} möglich` },
   { value: "1 Tag", label: "bis startklar" },
 ];
 
@@ -71,7 +71,7 @@ export default function WerkstattSoftwarePage() {
             {problems.map((p, i) => {
               const Icon = icons[i];
               return (
-                <div key={p.title} className="bg-surface-elevated p-8">
+                <Reveal key={p.title} delay={i * 90} className="bg-surface-elevated p-8">
                   <span className="grid h-11 w-11 place-items-center rounded-md border border-line bg-surface text-brand-orange">
                     <Icon className="h-5 w-5" strokeWidth={1.5} />
                   </span>
@@ -81,7 +81,7 @@ export default function WerkstattSoftwarePage() {
                   <p className="mt-2 text-base leading-relaxed text-ink-secondary">
                     {p.body}
                   </p>
-                </div>
+                </Reveal>
               );
             })}
           </div>

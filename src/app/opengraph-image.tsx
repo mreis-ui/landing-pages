@@ -60,8 +60,8 @@ export default function OgImage() {
             fontFamily: "monospace",
           }}
         >
-          <span>ab 199 € / Monat</span>
           <span>30 Tage kostenlos</span>
+          <span>MUT:Zu-Förderung bis 2.500 €</span>
           <span>Ganderkesee</span>
         </div>
       </div>

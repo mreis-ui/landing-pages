@@ -13,13 +13,13 @@ import { plans, company, pricing } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Preise",
   description:
-    "Klare Preise, monatlich kündbar: Starter ab 199 €, Pro 349 €, Enterprise ab 699 €. 30 Tage kostenlos, MUT:Zu-Förderung bis 2.500 € (50 %).",
+    "Fair und transparent, monatlich kündbar. Tarife Starter, Pro und Enterprise — Konditionen im persönlichen Gespräch. 30 Tage kostenlos, MUT:Zu-Förderung bis 2.500 €.",
 };
 
 const priceFaq = [
   {
-    q: "Gibt es Einrichtungskosten?",
-    a: "Nein. Die Einrichtung und Datenmigration sind im Onboarding enthalten — keine versteckten Setup-Gebühren.",
+    q: "Wie läuft das Onboarding?",
+    a: "Wir richten Werkstatt ONE gemeinsam mit Ihnen ein, migrieren Ihre Daten und schulen Ihr Team. Das Onboarding ist eine einmalige Leistung — die Konditionen besprechen wir transparent vorab, keine versteckten Gebühren.",
   },
   {
     q: "Kann ich monatlich kündigen?",
@@ -40,8 +40,8 @@ export default function PreisePage() {
     <>
       <PageHeader
         eyebrow="Preise"
-        title="Klare Preise. Kein Risiko."
-        lede={`Weniger als ein Tageslohn im Monat — und ${pricing.trialDays} Tage kostenlos getestet. Monatlich kündbar, keine Einrichtungsgebühr.`}
+        title="Fair, transparent, ohne Risiko."
+        lede={`Monatlich kündbar, ohne lange Vertragsbindung. Den passenden Tarif und die Konditionen stimmen wir im persönlichen Gespräch ab — inklusive ${pricing.trialDays} Tagen kostenlosem Test.`}
       >
         <div className="inline-flex items-center gap-2 rounded-md border border-brand-orange/30 bg-brand-orange-quiet px-4 py-2 text-sm text-ink-primary">
           <Sparkles className="h-4 w-4 text-brand-orange" strokeWidth={1.5} />
@@ -59,7 +59,7 @@ export default function PreisePage() {
               <Reveal key={plan.name} delay={i * 70} className="flex">
                 <div
                   className={cn(
-                    "flex w-full flex-col rounded-lg border p-8",
+                    "flex w-full flex-col rounded-lg border p-8 transition-all duration-200 ease-out-smooth hover:-translate-y-0.5 hover:shadow-md motion-reduce:transform-none",
                     plan.featured
                       ? "border-brand-orange bg-surface-elevated shadow-md ring-1 ring-brand-orange/20"
                       : "border-line bg-surface-elevated",
@@ -78,10 +78,12 @@ export default function PreisePage() {
                   <p className="mt-3 text-sm text-ink-secondary">{plan.tagline}</p>
 
                   <div className="mt-6 flex items-baseline gap-1.5">
-                    <span className="font-mono text-4xl font-semibold tracking-tight text-ink-primary">
+                    <span className="text-2xl font-semibold tracking-tight text-ink-primary">
                       {plan.price}
                     </span>
-                    <span className="text-sm text-ink-muted">{plan.cycle}</span>
+                    {plan.cycle && (
+                      <span className="text-sm text-ink-muted">{plan.cycle}</span>
+                    )}
                   </div>
 
                   <ul className="mt-6 flex-1 space-y-3">
@@ -100,7 +102,7 @@ export default function PreisePage() {
                   </ul>
 
                   <ButtonLink
-                    href={company.trialUrl}
+                    href="/kontakt"
                     variant={plan.featured ? "primary" : "secondary"}
                     size="lg"
                     className="mt-8 w-full"
@@ -114,8 +116,8 @@ export default function PreisePage() {
           </div>
 
           <p className="mt-6 text-center text-sm text-ink-muted">
-            Alle Preise zzgl. MwSt. · {pricing.trialDays} Tage kostenlos testen ·
-            keine Kreditkarte nötig
+            {pricing.trialDays} Tage kostenlos testen · keine Kreditkarte nötig ·
+            MUT:Zu-Förderung bis 2.500 €
           </p>
         </Container>
       </Section>

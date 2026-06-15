@@ -73,9 +73,6 @@ export function Header() {
           </nav>
 
           <div className="hidden items-center gap-2 lg:flex">
-            <ButtonLink href={company.demoUrl} variant="ghost" size="md">
-              Anmelden
-            </ButtonLink>
             <ButtonLink href={company.trialUrl} variant="primary" size="md">
               Kostenlos testen
               <ArrowRight className="h-4 w-4" strokeWidth={2} />
@@ -109,9 +106,6 @@ export function Header() {
               ))}
             </nav>
             <div className="mt-4 flex flex-col gap-2 border-t border-line pt-4">
-              <ButtonLink href={company.demoUrl} variant="secondary" size="lg">
-                Anmelden
-              </ButtonLink>
               <ButtonLink href={company.trialUrl} variant="primary" size="lg">
                 Kostenlos testen
                 <ArrowRight className="h-4 w-4" strokeWidth={2} />

@@ -36,7 +36,8 @@ export const integrations = {
 } as const;
 
 export const pricing = {
-  monthly: "ab 199 €",
+  // Konkrete Preise bewusst offen gelassen (Abstimmung mit Mattis ausstehend).
+  monthly: "Auf Anfrage",
   cycle: "pro Monat",
   cancel: "monatlich kündbar",
   trialDays: 30,
@@ -59,8 +60,8 @@ export type Plan = {
 export const plans: Plan[] = [
   {
     name: "Starter",
-    price: "199 €",
-    cycle: "/ Monat",
+    price: "Auf Anfrage",
+    cycle: "",
     tagline: "Für den Einstieg in den digitalen Betrieb.",
     features: [
       "Online-Terminbuchung 24/7",
@@ -69,12 +70,12 @@ export const plans: Plan[] = [
       "Bis 2 Nutzer",
       "E-Mail-Support",
     ],
-    cta: "Starter testen",
+    cta: "Angebot anfragen",
   },
   {
     name: "Pro",
-    price: "349 €",
-    cycle: "/ Monat",
+    price: "Auf Anfrage",
+    cycle: "",
     tagline: "Der volle Funktionsumfang für wachsende Betriebe.",
     featured: true,
     features: [
@@ -86,12 +87,12 @@ export const plans: Plan[] = [
       "Telefon-Support",
       "ERP-Anbindung (Profi32 u. a.)",
     ],
-    cta: "Pro testen",
+    cta: "Angebot anfragen",
   },
   {
     name: "Enterprise",
-    price: "ab 699 €",
-    cycle: "/ Monat",
+    price: "Individuell",
+    cycle: "",
     tagline: "Für Multi-Standort-Betriebe mit eigenen Anforderungen.",
     features: [
       "Alle Pro-Funktionen",
@@ -391,7 +392,7 @@ export type FaqItem = { q: string; a: string };
 export const faq: FaqItem[] = [
   {
     q: "Was kostet Werkstatt ONE?",
-    a: "Werkstatt ONE startet ab 199 € pro Monat und ist monatlich kündbar — ohne lange Vertragsbindung. Über die MUT:Zu-Förderung sind bis zu 2.500 € Zuschuss möglich. Sie testen alle Funktionen 30 Tage kostenlos, ganz ohne Kreditkarte.",
+    a: "Werkstatt ONE ist monatlich kündbar, ohne lange Vertragsbindung. Den genauen Preis stimmen wir abhängig von Tarif und gewünschtem Funktionsumfang im persönlichen Gespräch mit Ihnen ab. Über die MUT:Zu-Förderung sind bis zu 2.500 € Zuschuss möglich, und Sie testen alle Funktionen 30 Tage kostenlos.",
   },
   {
     q: "Wie lange dauert die Einrichtung?",

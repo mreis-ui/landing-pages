@@ -18,7 +18,7 @@ const icons = [FileWarning, Clock, PhoneOff];
 
 const stats = [
   { value: pricing.savings, label: "gespart bei Pilotkunde KFZ-Kruse aus Ganderkesee" },
-  { value: pricing.subsidy, label: `${pricing.subsidyName} möglich` },
+  { value: "6 Module", label: "in einer Plattform" },
   { value: "1 Tag", label: "bis startklar" },
 ];
 
@@ -39,8 +39,7 @@ export default function WerkstattSoftwarePage() {
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-secondary">
                 TÜV-Reminder, Mahnwesen, Terminbuchung, Rechnung — alles in einer
                 Plattform. {pricing.trialDays} Tage kostenlos testen, monatlich
-                kündbar. MUT:Zu-Förderung bis 2.500 € Zuschuss. Pilotkunde
-                KFZ-Kruse spart 13 Stunden pro Woche.
+                kündbar. Pilotkunde KFZ-Kruse spart 13 Stunden pro Woche.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <ButtonLink href={company.trialUrl} variant="primary" size="lg">

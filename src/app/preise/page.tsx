@@ -13,7 +13,7 @@ import { plans, company, pricing } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Preise",
   description:
-    "Fair und transparent, monatlich kündbar. Tarife Starter, Pro und Enterprise — Konditionen im persönlichen Gespräch. 30 Tage kostenlos, MUT:Zu-Förderung bis 2.500 €.",
+    "Fair und transparent, monatlich kündbar. Tarife Starter, Pro und Enterprise — Konditionen im persönlichen Gespräch. 30 Tage kostenlos testen, ohne Kreditkarte.",
 };
 
 const priceFaq = [
@@ -46,8 +46,8 @@ export default function PreisePage() {
         <div className="inline-flex items-center gap-2 rounded-md border border-brand-orange/30 bg-brand-orange-quiet px-4 py-2 text-sm text-ink-primary">
           <Sparkles className="h-4 w-4 text-brand-orange" strokeWidth={1.5} />
           <span>
-            <strong>MUT:Zu-Förderung sichern</strong> — bis zu 2.500 € Zuschuss
-            (50 %) für KFZ-Werkstätten
+            <strong>{pricing.trialDays} Tage kostenlos testen</strong> — ohne
+            Kreditkarte, monatlich kündbar
           </span>
         </div>
       </PageHeader>
@@ -117,7 +117,7 @@ export default function PreisePage() {
 
           <p className="mt-6 text-center text-sm text-ink-muted">
             {pricing.trialDays} Tage kostenlos testen · keine Kreditkarte nötig ·
-            MUT:Zu-Förderung bis 2.500 €
+            monatlich kündbar
           </p>
         </Container>
       </Section>
@@ -149,7 +149,7 @@ export default function PreisePage() {
 
       <CTABand
         title="Unsicher, welcher Tarif passt?"
-        body="Wir beraten Sie ehrlich — und klären gleich, ob die MUT:Zu-Förderung für Sie infrage kommt."
+        body="Wir beraten Sie ehrlich und finden gemeinsam die Lösung, die zu Ihrem Betrieb passt."
       />
     </>
   );

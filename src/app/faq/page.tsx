@@ -9,7 +9,7 @@ import { faq, company } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Häufige Fragen",
   description:
-    "Antworten zu Preis, Einrichtung, Datenmigration, DSGVO, Kündigung und MUT:Zu-Förderung von Werkstatt ONE.",
+    "Antworten zu Preis, Einrichtung, Datenmigration, DSGVO und Kündigung von Werkstatt ONE.",
 };
 
 // FAQ structured data for rich results
@@ -33,7 +33,7 @@ export default function FaqPage() {
       <PageHeader
         eyebrow="FAQ"
         title="Häufige Fragen."
-        lede="Alles Wichtige zu Preis, Einrichtung, Datenschutz und Förderung. Ihre Frage ist nicht dabei? Schreiben Sie uns einfach."
+        lede="Alles Wichtige zu Preis, Einrichtung und Datenschutz. Ihre Frage ist nicht dabei? Schreiben Sie uns einfach."
       />
 
       <Section>

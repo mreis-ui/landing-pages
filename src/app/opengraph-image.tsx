@@ -61,7 +61,7 @@ export default function OgImage() {
           }}
         >
           <span>30 Tage kostenlos</span>
-          <span>MUT:Zu-Förderung bis 2.500 €</span>
+          <span>Made in Germany</span>
           <span>Ganderkesee</span>
         </div>
       </div>

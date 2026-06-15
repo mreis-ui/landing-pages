@@ -41,8 +41,6 @@ export const pricing = {
   cycle: "pro Monat",
   cancel: "monatlich kündbar",
   trialDays: 30,
-  subsidy: "bis 2.500 €",
-  subsidyName: "MUT:Zu-Förderung",
   onboarding: "1 Tag bis startklar",
   savings: "13 h / Woche",
 } as const;
@@ -392,7 +390,7 @@ export type FaqItem = { q: string; a: string };
 export const faq: FaqItem[] = [
   {
     q: "Was kostet Werkstatt ONE?",
-    a: "Werkstatt ONE ist monatlich kündbar, ohne lange Vertragsbindung. Den genauen Preis stimmen wir abhängig von Tarif und gewünschtem Funktionsumfang im persönlichen Gespräch mit Ihnen ab. Über die MUT:Zu-Förderung sind bis zu 2.500 € Zuschuss möglich, und Sie testen alle Funktionen 30 Tage kostenlos.",
+    a: "Werkstatt ONE ist monatlich kündbar, ohne lange Vertragsbindung. Den genauen Preis stimmen wir abhängig von Tarif und gewünschtem Funktionsumfang im persönlichen Gespräch mit Ihnen ab. Sie testen alle Funktionen 30 Tage kostenlos, ganz ohne Kreditkarte.",
   },
   {
     q: "Wie lange dauert die Einrichtung?",
@@ -409,10 +407,6 @@ export const faq: FaqItem[] = [
   {
     q: "Kann ich monatlich kündigen?",
     a: "Ja. Werkstatt ONE ist monatlich kündbar. Keine Mindestlaufzeit, keine versteckten Kosten — Sie bleiben, weil es sich lohnt, nicht weil ein Vertrag Sie hält.",
-  },
-  {
-    q: "Was ist die MUT:Zu-Förderung?",
-    a: "MUT:Zu ist ein Förderprogramm für die Digitalisierung kleiner und mittlerer Betriebe. Damit sind bis zu 2.500 € Zuschuss zur Einführung von Werkstatt ONE möglich. Wir unterstützen Sie gern bei der Antragstellung.",
   },
   {
     q: "Brauche ich besondere Hardware?",

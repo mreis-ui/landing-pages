@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, Quote } from "lucide-react";
+import { ArrowRight, Check, Quote, Wrench } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
@@ -16,9 +16,9 @@ import {
 } from "@/lib/site";
 
 const heroStats = [
-  { value: pricing.subsidy, label: `${pricing.subsidyName} möglich` },
-  { value: `${pricing.trialDays} Tage`, label: "kostenlos testen" },
   { value: pricing.savings, label: "gespart bei Pilotkunde KFZ-Kruse" },
+  { value: `${pricing.trialDays} Tage`, label: "kostenlos testen" },
+  { value: "6 Module", label: "in einer Plattform" },
   { value: "1 Tag", label: "bis startklar" },
 ];
 
@@ -31,9 +31,13 @@ export default function HomePage() {
         <Container className="relative">
           <div className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             <div>
-              <div className="inline-flex items-center gap-2 rounded-pill border border-line bg-surface-elevated px-3 py-1 font-mono text-2xs uppercase tracking-wider text-ink-secondary">
-                <span className="h-1.5 w-1.5 rounded-full bg-brand-orange" />
-                Aus der Werkstatt, für die Werkstatt
+              <div className="inline-flex items-center gap-2.5 rounded-pill border border-line bg-surface-elevated py-1 pl-1.5 pr-4 shadow-sm">
+                <span className="grid h-6 w-6 place-items-center rounded-full bg-brand-orange-quiet text-brand-orange">
+                  <Wrench className="h-3.5 w-3.5" strokeWidth={2} />
+                </span>
+                <span className="text-sm font-medium text-ink-primary">
+                  Aus der Werkstatt, für die Werkstatt
+                </span>
               </div>
 
               <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-ink-primary sm:text-5xl lg:text-6xl">
@@ -44,8 +48,8 @@ export default function HomePage() {
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-secondary">
                 TÜV-Reminder, Mahnwesen, Terminbuchung — alles in einer
                 Plattform. Von einer Werkstatt aus Ganderkesee, für KFZ-Betriebe
-                im {company.region}. {pricing.trialDays} Tage kostenlos testen,{" "}
-                {pricing.subsidyName} bis 2.500 €.
+                im {company.region}. {pricing.trialDays} Tage kostenlos testen,
+                monatlich kündbar.
               </p>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -148,7 +152,7 @@ export default function HomePage() {
               <SectionHeading
                 eyebrow="Preise"
                 title="Faire, transparente Konditionen."
-                lede="Monatlich kündbar, ohne lange Vertragsbindung und ohne Modulgebühren-Dschungel. Den passenden Tarif stimmen wir im persönlichen Gespräch ab — förderfähig über MUT:Zu."
+                lede="Monatlich kündbar, ohne lange Vertragsbindung und ohne Modulgebühren-Dschungel. Den passenden Tarif stimmen wir gemeinsam im persönlichen Gespräch ab."
               />
             </Reveal>
             <Reveal delay={80}>
@@ -157,7 +161,7 @@ export default function HomePage() {
                   {[
                     "Alle sechs Module aus einer Hand",
                     `${pricing.trialDays} Tage kostenlos testen, ohne Kreditkarte`,
-                    `${pricing.subsidyName}: bis 2.500 € Zuschuss möglich`,
+                    "Monatlich kündbar, keine lange Vertragsbindung",
                     "Persönliches Onboarding & Datenmigration",
                     "DSGVO-konform, SSL-verschlüsselt",
                   ].map((f) => (

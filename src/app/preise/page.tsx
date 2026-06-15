@@ -31,7 +31,7 @@ const priceFaq = [
   },
   {
     q: "Lässt sich mein bestehendes System anbinden?",
-    a: "Ja. Wir binden bestehende ERP- und Branchensysteme wie Profi32 an, sodass Ihre Daten zwischen den Systemen fließen. Den genauen Umfang der Anbindung stimmen wir im persönlichen Gespräch mit Ihnen ab — in der Regel sind Sie an einem Tag startklar.",
+    a: "Teilweise. Wir binden bestehende ERP- und Branchensysteme wie Profi32 für die relevanten Daten an — etwa Kunden, Fahrzeuge und Belege. Nicht jede Funktion lässt sich sinnvoll direkt anbinden; was in Ihrem Fall geht und was Sinn macht, klären wir ehrlich im persönlichen Gespräch.",
   },
 ];
 

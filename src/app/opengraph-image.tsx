@@ -1,0 +1,71 @@
+import { ImageResponse } from "next/og";
+
+export const alt = "Werkstatt ONE — Werkstattsoftware für KFZ-Meisterbetriebe";
+export const size = { width: 1200, height: 630 };
+export const contentType = "image/png";
+
+const MARK = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 211.5 204.75"><path fill="#1a1a2e" d="M143.08,100.8c17.83-3.05,25.84,18.21,12.2,29.34-9.62,7.85-18.09.09-24.79,5.94-4.81,4.19-3.05,10.37-3.78,15.66-.68,4.95-4.6,10.32-8.98,12.72-19.6,10.72-34.77-15.11-16.82-27.97,7.17-5.14,15.62-1.16,22.5-5.98,6.13-4.29,4.12-9.2,5.05-15.14,1.05-6.67,7.99-13.44,14.62-14.57Z"/><path fill="#1a1a2e" d="M101.14,47.74c20.81-1.49,23.06,28.3,3.75,32.94-7.16,1.72-12.85-2.6-18.64,3.1-4.37,4.3-2.43,8.23-3.05,13.4-2.85,23.55-37.74,22.17-33.49-2.73.72-4.21,5.71-10.31,9.56-12.14,6.72-3.2,14.33-.18,20.63-4.85,5.73-4.25,3.65-9.93,5.07-15.87,1.71-7.14,8.79-13.31,16.17-13.84Z"/><path fill="#de532a" d="M97.32,99.3c14.26-2.93,20.51,12.92,9.89,21.06-6.41,4.91-12.46.91-16.85,3.39-5.72,3.22-.53,13.86-8.33,20.1-10.41,8.32-24.12-2.01-18.13-14.33,5.07-10.42,16.18-4.56,21.57-9.9,3.1-3.07,1.78-6.02,2.48-9.48.86-4.26,4.92-9.92,9.37-10.84Z"/><path fill="#1a1a2e" d="M115.53,113.32c.51-10.34-3.47-15.04-13.13-17.2-.93-.21-2.28-.16-1.12-1.47.23-.26,5.5-3.06,6.12-3.25,2.77-.84,6.12-.57,9.03-1.46,11.6-3.53,1.8-15.12,13.09-22.08,11.86-7.31,23.18,6.51,15.14,17.32-6.3,8.47-19.54,1.36-21.48,9.98-1.46,6.5,1.66,14.57-7.65,18.15Z"/></svg>`;
+const MARK_URL = `data:image/svg+xml,${encodeURIComponent(MARK)}`;
+
+export default function OgImage() {
+  return new ImageResponse(
+    (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          background: "#f7f7f5",
+          padding: 72,
+          fontFamily: "sans-serif",
+        }}
+      >
+        <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={MARK_URL} width={56} height={56} alt="" />
+          <div style={{ fontSize: 30, fontWeight: 600, color: "#0f1115" }}>
+            Werkstatt ONE
+          </div>
+        </div>
+
+        <div style={{ display: "flex", flexDirection: "column" }}>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              fontSize: 64,
+              fontWeight: 700,
+              color: "#0f1115",
+              lineHeight: 1.05,
+              letterSpacing: "-0.03em",
+              maxWidth: 980,
+            }}
+          >
+            <span>Werkstattsoftware für&nbsp;</span>
+            <span style={{ color: "#f25a1c" }}>KFZ-Meisterbetriebe.</span>
+          </div>
+          <div style={{ fontSize: 28, color: "#4a4d54", marginTop: 24 }}>
+            TÜV-Reminder · Mahnwesen · Terminbuchung — in einer Plattform.
+          </div>
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            gap: 40,
+            fontSize: 22,
+            color: "#8a8d94",
+            fontFamily: "monospace",
+          }}
+        >
+          <span>ab 199 € / Monat</span>
+          <span>30 Tage kostenlos</span>
+          <span>Ganderkesee</span>
+        </div>
+      </div>
+    ),
+    { ...size },
+  );
+}

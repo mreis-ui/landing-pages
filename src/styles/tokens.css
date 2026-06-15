@@ -1,0 +1,63 @@
+/*
+ * Flowbyte Systems — Design Tokens
+ * --------------------------------
+ * Mirrors the Werkstatt ONE token set (industrial-technical, light-dominant).
+ * Werkstatt-Halle-tauglich (helle Umgebung), nicht Schreibtisch-Nerd-Dark.
+ *  - --color-* : semantic colors (use these, not raw hex)
+ *  - --radius-* : capped at 8 px (no rounded-xl/2xl bonanza)
+ *  - --shadow-* : subtle elevation only, no glow/glassmorphism
+ */
+
+:root {
+  /* ---------------------------- color system ------------------------- */
+  --color-surface: #f7f7f5; /* page background — slightly off white */
+  --color-surface-elevated: #ffffff; /* cards, modals */
+  --color-surface-sunken: #ededea; /* table-header, input-bg */
+
+  --color-border: #e4e4e1; /* default 1px hairline */
+  --color-border-strong: #c9c9c5; /* dividers between major sections */
+
+  --color-text-primary: #0f1115; /* near-black, ink-on-paper */
+  --color-text-secondary: #4a4d54; /* labels, secondary copy */
+  --color-text-muted: #8a8d94; /* placeholders, helper-text */
+
+  /* Brand orange — reserved for primary actions & accents. */
+  --color-accent: #f25a1c;
+  --color-accent-hover: #d94d12;
+  --color-accent-quiet: rgba(242, 90, 28, 0.08);
+
+  /* Status colors — flat, no gradients. */
+  --color-status-ok: #2f7d32;
+  --color-status-warn: #b25c00;
+  --color-status-err: #b3261e;
+  --color-status-info: #1f5f99;
+
+  /* ---------------------------- radii (capped 8 px) ----------------- */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+
+  /* ---------------------------- shadows (subtle only) --------------- */
+  --shadow-sm: 0 1px 0 0 rgba(15, 17, 21, 0.04);
+  --shadow-md: 0 1px 2px 0 rgba(15, 17, 21, 0.06), 0 1px 0 0 rgba(15, 17, 21, 0.04);
+  --shadow-lg: 0 8px 24px -12px rgba(15, 17, 21, 0.18), 0 1px 0 0 rgba(15, 17, 21, 0.04);
+}
+
+.dark {
+  --color-surface: #15171b;
+  --color-surface-elevated: #1a1d24;
+  --color-surface-sunken: #0f1115;
+
+  --color-border: #2a2d34;
+  --color-border-strong: #3a3d44;
+
+  --color-text-primary: #ececea;
+  --color-text-secondary: #b3b6bc;
+  --color-text-muted: #6c6f76;
+
+  --color-accent-quiet: rgba(242, 90, 28, 0.12);
+
+  --shadow-sm: 0 1px 0 0 rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 1px 2px 0 rgba(0, 0, 0, 0.5), 0 1px 0 0 rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 24px -12px rgba(0, 0, 0, 0.6);
+}

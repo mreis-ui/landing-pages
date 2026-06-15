@@ -1,40 +1,53 @@
-# Werkstatt ONE — Website & Landing Pages
+# Flowbyte Systems — Website (Werkstatt ONE)
 
-Die offizielle Website und Funnel-Landing-Pages für **Werkstatt ONE** by Flowbyte Systems.
+Marketing site for **Werkstatt ONE**, the workshop software by Flowbyte Systems.
+Built with **Next.js (App Router) + TypeScript + Tailwind CSS**, deployed on **Vercel**.
 
-## 🗂 Dateien
+The visual design mirrors the Werkstatt ONE Cloud product: light-dominant,
+industrial-technical, type-driven. Tokens live in `src/styles/tokens.css` and are
+exposed to Tailwind via `tailwind.config.ts`. No gradients/glows by design.
 
-| Datei | Beschreibung |
-|:------|:-------------|
-| `index.html` | Homepage — Hauptseite mit Features, Dashboard Preview, CTA |
-| `awareness.html` | Landing Page — Awareness-Stufe (Problem-Awareness) |
-| `consideration.html` | Landing Page — Consideration-Stufe (Feature-Vergleich, Gadzhi-Tabelle) |
-| `decision.html` | Landing Page — Decision-Stufe (Trial-Formular, ElevenLabs AI) |
-| `ghl-proxy-worker.js` | Cloudflare Worker Proxy für GoHighLevel API (CORS) |
+## Develop
 
-## 🎨 Design System
+```bash
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # production build
+npm run start    # serve the production build
+```
 
-- **Palette:** Refined Amber (`#D4922A` Accent, `#0A0A0C` Background, `#F5F3F0` Text)
-- **Font:** Inter (Google Fonts)
-- **Grid:** 8pt Grid System
-- **Framework:** Pure HTML/CSS/JS — keine Dependencies
+## Structure
 
-## 📊 Tracking
+```
+src/
+  app/                 # routes (App Router)
+    page.tsx           # Home
+    funktionen/        # Features overview + [slug] detail pages
+    loesungen/         # Solutions
+    referenzen/        # Case study (KFZ-Kruse)
+    vision/  faq/  kontakt/
+    impressum/  datenschutz/  cookies/
+    api/contact/       # contact form handler
+    sitemap.ts  robots.ts  opengraph-image.tsx  icon.tsx
+  components/          # Header, Footer, DashboardPreview, ModuleCard, …
+  lib/site.ts          # single source of truth for all copy/content
+  styles/              # tokens.css + globals.css
+```
 
-Google Ads Conversion Tracking ist eingebaut:
-- **Conversion ID:** `AW-17943325984`
-- **Conversion Label:** `JjkhCIrT7fUbEKDahexC`
-- Events: Scroll Depth, Time on Page, CTA Clicks
+## Content
 
-## 🚀 Deployment
+Almost all copy is centralized in `src/lib/site.ts` — edit there to update
+modules, pricing, FAQ, nav and footer across the whole site.
 
-Statische HTML-Dateien — kann direkt auf jeder Hosting-Plattform deployed werden:
-- Vercel
-- Netlify
-- Cloudflare Pages
-- GitHub Pages
-- Eigener Server
+## Contact form
 
-## 📝 Lizenz
+`POST /api/contact` validates input and (optionally) forwards the lead to an
+n8n webhook. Configure in Vercel → Project → Environment Variables:
 
-Privat — © 2026 Flowbyte Systems GmbH
+| Variable                  | Purpose                                        |
+| ------------------------- | ---------------------------------------------- |
+| `CONTACT_WEBHOOK_URL`     | n8n webhook the lead is POSTed to              |
+| `CONTACT_WEBHOOK_API_KEY` | optional, sent as `X-API-Key` header           |
+
+Without `CONTACT_WEBHOOK_URL` the lead is logged (not lost), and the form still
+returns success.

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Check, Quote, Wrench } from "lucide-react";
+import { ArrowRight, Check, Quote } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Section, SectionHeading } from "@/components/ui/Section";
 import { ButtonLink } from "@/components/ui/Button";
@@ -31,14 +31,9 @@ export default function HomePage() {
         <Container className="relative">
           <div className="grid items-center gap-12 py-16 sm:py-24 lg:grid-cols-[1fr_1.05fr] lg:gap-16">
             <div>
-              <div className="inline-flex items-center gap-2.5 rounded-pill border border-line bg-surface-elevated py-1 pl-1.5 pr-4 shadow-sm">
-                <span className="grid h-6 w-6 place-items-center rounded-full bg-brand-orange-quiet text-brand-orange">
-                  <Wrench className="h-3.5 w-3.5" strokeWidth={2} />
-                </span>
-                <span className="text-sm font-medium text-ink-primary">
-                  Aus der Werkstatt, für die Werkstatt
-                </span>
-              </div>
+              <p className="text-sm font-medium text-ink-secondary">
+                Aus der Werkstatt, für die Werkstatt
+              </p>
 
               <h1 className="mt-6 text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-ink-primary sm:text-5xl lg:text-6xl">
                 Werkstattsoftware für{" "}

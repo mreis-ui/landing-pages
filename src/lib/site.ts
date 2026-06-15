@@ -137,12 +137,36 @@ export type IconName =
   | "bell-ring"
   | "stamp"
   | "line-chart"
-  | "boxes";
+  | "boxes"
+  | "landmark"
+  | "calculator"
+  | "trending-up"
+  | "scan-line"
+  | "messages-square"
+  | "users";
+
+export type ModuleCategory =
+  | "Werkstatt-Betrieb"
+  | "Finanzen & Buchhaltung"
+  | "Auswertung & Controlling"
+  | "Dokumente & Kommunikation"
+  | "Personal";
+
+export const moduleCategories: ModuleCategory[] = [
+  "Werkstatt-Betrieb",
+  "Finanzen & Buchhaltung",
+  "Auswertung & Controlling",
+  "Dokumente & Kommunikation",
+  "Personal",
+];
 
 export type Module = {
   slug: string;
   icon: IconName;
   name: string;
+  category: ModuleCategory;
+  /* not yet generally available — shown with an "in Entwicklung" badge */
+  status?: "soon";
   tagline: string;
   short: string;
   /* detail page content */
@@ -157,6 +181,7 @@ export const modules: Module[] = [
     slug: "terminbuchung",
     icon: "calendar",
     name: "Online-Terminbuchung",
+    category: "Werkstatt-Betrieb",
     tagline: "Kunden buchen selbst — 24/7.",
     short:
       "Kunden buchen selbst — 24/7. Automatische Bestätigung per SMS und E-Mail.",
@@ -189,6 +214,7 @@ export const modules: Module[] = [
     slug: "auftragserfassung",
     icon: "clipboard",
     name: "Digitale Auftragserfassung",
+    category: "Werkstatt-Betrieb",
     tagline: "Vom Check-in bis zur Übergabe — lückenlos.",
     short:
       "Vom Check-in bis zur Fahrzeugübergabe — lückenlos dokumentiert, nie wieder Zettel suchen.",
@@ -221,6 +247,7 @@ export const modules: Module[] = [
     slug: "mahnwesen",
     icon: "bell-ring",
     name: "Automatisches Mahnwesen",
+    category: "Finanzen & Buchhaltung",
     tagline: "Das System mahnt — Sie kassieren.",
     short:
       "Überfällige Rechnungen? Das System mahnt automatisch in drei Eskalationsstufen.",
@@ -253,6 +280,7 @@ export const modules: Module[] = [
     slug: "tuev-reminder",
     icon: "stamp",
     name: "TÜV / AU-Reminder",
+    category: "Werkstatt-Betrieb",
     tagline: "Erinnern Sie automatisch — vor der Fälligkeit.",
     short:
       "Automatische Erinnerung an Ihre Kunden vor der Fälligkeit. Sie bekommen den Folgeauftrag.",
@@ -285,6 +313,7 @@ export const modules: Module[] = [
     slug: "dashboard",
     icon: "line-chart",
     name: "Echtzeit-Dashboard",
+    category: "Auswertung & Controlling",
     tagline: "Umsatz, Auslastung, offene Posten — auf einen Blick.",
     short:
       "Umsatz, Auslastung, offene Posten — alles auf einen Blick. Auch vom Smartphone.",
@@ -317,6 +346,7 @@ export const modules: Module[] = [
     slug: "lager",
     icon: "boxes",
     name: "Lager & Einkauf",
+    category: "Werkstatt-Betrieb",
     tagline: "Bestand im Griff, Bestellung automatisch.",
     short:
       "Effiziente Lagerverwaltung mit automatischer Bestandskontrolle und Bestellvorschlägen.",
@@ -344,6 +374,205 @@ export const modules: Module[] = [
       "Inventur-Unterstützung",
     ],
     metric: { value: "Auto", label: "Bestellvorschläge" },
+  },
+  {
+    slug: "banking",
+    icon: "landmark",
+    name: "Banking & Kontoabgleich",
+    category: "Finanzen & Buchhaltung",
+    tagline: "Kontobewegungen automatisch zugeordnet.",
+    short:
+      "Bankumsätze fließen automatisch ins System und werden offenen Rechnungen zugeordnet.",
+    intro:
+      "Schluss mit dem manuellen Abhaken von Kontoauszügen. Werkstatt ONE verbindet sich über finAPI sicher mit Ihrem Geschäftskonto, holt die Umsätze automatisch und ordnet eingehende Zahlungen den passenden offenen Posten zu. Sie sehen jederzeit, was bezahlt ist und was offen bleibt.",
+    benefits: [
+      {
+        title: "Automatischer Abgleich",
+        body: "Eingehende Zahlungen werden offenen Rechnungen automatisch zugeordnet — inklusive Teilzahlungen.",
+      },
+      {
+        title: "Sichere Bankanbindung",
+        body: "Per finAPI verbinden Sie Ihr Konto bankenkonform; Umsätze landen automatisch im System.",
+      },
+      {
+        title: "Liquidität im Blick",
+        body: "Bezahlt, offen, überfällig — Kontostand und offene Posten sind immer aktuell.",
+      },
+    ],
+    features: [
+      "Sichere Bankanbindung über finAPI",
+      "Automatischer Zahlungsabgleich mit offenen Posten",
+      "Mehrere Konten an einem Ort",
+      "Erkennung von Teilzahlungen",
+      "Übergabe ans Mahnwesen bei Überfälligkeit",
+    ],
+    metric: { value: "Auto", label: "Zahlungen zugeordnet" },
+  },
+  {
+    slug: "buchhaltung",
+    icon: "calculator",
+    name: "Buchhaltung & DATEV",
+    category: "Finanzen & Buchhaltung",
+    status: "soon",
+    tagline: "Vorkontiert bis zum Steuerberater.",
+    short:
+      "Belege vorkontiert, Monatsabschluss in Schritten, sauberer Export zum Steuerberater.",
+    intro:
+      "Werkstatt ONE bereitet Ihre Buchhaltung vor: Belege werden anhand von Kontierungsregeln automatisch vorkontiert, der Monatsabschluss läuft in nachvollziehbaren Schritten, und am Ende steht eine saubere Übergabe an Ihren Steuerberater. Den vollständigen DATEV-Dateiexport bauen wir aktuell aus.",
+    benefits: [
+      {
+        title: "Automatische Vorkontierung",
+        body: "Wiederkehrende Buchungen werden per Regel vorkontiert — weniger Handarbeit, weniger Fehler.",
+      },
+      {
+        title: "Geführter Monatsabschluss",
+        body: "Ein klarer Schritt-für-Schritt-Ablauf sorgt dafür, dass nichts vergessen wird.",
+      },
+      {
+        title: "Steuerberater-freundlich",
+        body: "Kartenzahlungen, Belege und Buchungen sauber aufbereitet zur Übergabe.",
+      },
+    ],
+    features: [
+      "Kontierungsregeln mit fester Reihenfolge",
+      "Geführter Monatsabschluss (mehrstufig)",
+      "Kartenzahlungs-Dashboard",
+      "Beleg-Verknüpfung mit Buchungen",
+      "DATEV-Export (in Entwicklung)",
+    ],
+    metric: { value: "DATEV", label: "Export zum Steuerberater" },
+  },
+  {
+    slug: "controlling",
+    icon: "trending-up",
+    name: "Controlling & BI",
+    category: "Auswertung & Controlling",
+    tagline: "Zahlen, die Entscheidungen tragen.",
+    short:
+      "Umsatz, Liquidität und Kennzahlen in Echtzeit — mit Liquiditäts-Ampel und Trends.",
+    intro:
+      "Wie steht der Betrieb wirklich da? Werkstatt ONE wertet Ihre Daten betriebswirtschaftlich aus: Umsatzentwicklung, Liquiditäts-Ampel, Kundenkohorten und Frühwarnungen. Keine Excel-Bastelei mehr — die Kennzahlen, die zählen, sind immer aktuell.",
+    benefits: [
+      {
+        title: "Liquiditäts-Ampel",
+        body: "Auf einen Blick sehen, ob die Liquidität reicht — inklusive Prognose.",
+      },
+      {
+        title: "Umsatz- & Margentrends",
+        body: "Entwicklung über Wochen und Monate, nicht nur der Blick auf heute.",
+      },
+      {
+        title: "Frühwarnung",
+        body: "Auffälligkeiten werden sichtbar, bevor sie zum Problem werden.",
+      },
+    ],
+    features: [
+      "Liquiditäts-Ampel mit Prognose",
+      "Umsatz- und Trend-Auswertungen",
+      "Kundenkohorten & Wiederkehrrate",
+      "KPI-Übersicht mit Sparklines",
+      "Export der Auswertungen",
+    ],
+    metric: { value: "Echtzeit", label: "Betriebskennzahlen" },
+  },
+  {
+    slug: "dms",
+    icon: "scan-line",
+    name: "Dokumente & Belegerkennung",
+    category: "Dokumente & Kommunikation",
+    tagline: "Belege scannen, den Rest macht das System.",
+    short:
+      "Belege per OCR erkannt, klassifiziert und revisionssicher abgelegt — in Sekunden auffindbar.",
+    intro:
+      "Eingangsrechnungen, Lieferscheine, Gutschriften — Werkstatt ONE liest Belege per OCR aus, klassifiziert sie automatisch und legt sie revisionssicher ab. Verknüpft mit Kunde, Fahrzeug oder Auftrag, sodass Sie jeden Beleg in Sekunden wiederfinden.",
+    benefits: [
+      {
+        title: "Automatische Belegerkennung",
+        body: "OCR liest Belege aus und schlägt Typ und Zuordnung automatisch vor.",
+      },
+      {
+        title: "Alles verknüpft",
+        body: "Dokumente hängen am richtigen Kunden, Fahrzeug oder Auftrag.",
+      },
+      {
+        title: "In Sekunden gefunden",
+        body: "Volltextsuche über alle Dokumente statt Aktenordner zu wälzen.",
+      },
+    ],
+    features: [
+      "OCR-Belegerkennung & Klassifizierung",
+      "Revisionssichere Ablage",
+      "Verknüpfung mit Kunde / Fahrzeug / Auftrag",
+      "Volltextsuche über alle Dokumente",
+      "Eingangsrechnungen automatisch erfassen",
+    ],
+    metric: { value: "OCR", label: "Belege automatisch erfasst" },
+  },
+  {
+    slug: "kommunikation",
+    icon: "messages-square",
+    name: "Team-Chat & E-Mail",
+    category: "Dokumente & Kommunikation",
+    tagline: "Kommunikation, wo die Arbeit passiert.",
+    short:
+      "Interner Team-Chat und E-Mail direkt im System — kein Wechsel zwischen Tools.",
+    intro:
+      "Absprachen, Rückfragen, Kundenmails — alles dort, wo auch die Aufträge liegen. Werkstatt ONE bringt internen Team-Chat und E-Mail direkt ins System, verknüpft mit Kunden und Aufträgen. Kein ständiger Tool-Wechsel, kein verlorener Kontext.",
+    benefits: [
+      {
+        title: "Alles an einem Ort",
+        body: "Chat und E-Mail im selben System wie Aufträge und Kunden.",
+      },
+      {
+        title: "Mit Kontext verknüpft",
+        body: "Nachrichten lassen sich mit Kunde oder Auftrag verbinden.",
+      },
+      {
+        title: "Schnellere Abstimmung",
+        body: "Das Team klärt Rückfragen direkt — ohne WhatsApp-Wildwuchs.",
+      },
+    ],
+    features: [
+      "Interner Team-Chat",
+      "E-Mail-Postfach im System",
+      "Verknüpfung mit Kunden & Aufträgen",
+      "Benachrichtigungen im Kontext",
+      "Ein System statt ständigem Tool-Wechsel",
+    ],
+    metric: { value: "1", label: "System für alles" },
+  },
+  {
+    slug: "personal",
+    icon: "users",
+    name: "Personal & Zeiterfassung",
+    category: "Personal",
+    tagline: "Schichten, Urlaub, Lohn — geplant statt verzettelt.",
+    short:
+      "Schichtplanung, Urlaubsanträge, Zeiterfassung und Lohn-Vorbereitung in einem Modul.",
+    intro:
+      "Wer arbeitet wann, wer hat Urlaub, wie viele Stunden sind aufgelaufen? Werkstatt ONE bündelt Schichtplanung, Urlaubsverwaltung, Stempeluhr und Lohn-Vorbereitung — damit Personalplanung nicht mehr auf Zetteln und im Kopf passiert.",
+    benefits: [
+      {
+        title: "Schichtplanung",
+        body: "Wer wann an welcher Bühne steht — übersichtlich geplant statt zugerufen.",
+      },
+      {
+        title: "Urlaub & Abwesenheit",
+        body: "Anträge, Genehmigung und Resturlaub an einem Ort.",
+      },
+      {
+        title: "Zeit & Lohn",
+        body: "Stempeluhr und Stundenkonten als saubere Basis für die Lohnabrechnung.",
+      },
+    ],
+    features: [
+      "Schichtplanung",
+      "Urlaubs- & Abwesenheitsverwaltung",
+      "Stempeluhr / Zeiterfassung",
+      "Stundenkonten",
+      "Lohn-Vorbereitung",
+    ],
+    metric: { value: "Alles", label: "rund ums Team" },
   },
 ];
 

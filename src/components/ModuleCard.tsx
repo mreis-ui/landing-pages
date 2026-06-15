@@ -25,9 +25,15 @@ export function ModuleCard({
         <span className="grid h-11 w-11 place-items-center rounded-md border border-line bg-surface text-ink-primary transition-colors group-hover:border-brand-orange group-hover:text-brand-orange">
           <ModuleIcon name={module.icon} className="h-5 w-5" />
         </span>
-        <span className="font-mono text-sm text-ink-muted">
-          {String(index + 1).padStart(2, "0")}
-        </span>
+        {module.status === "soon" ? (
+          <span className="rounded-pill border border-line bg-surface px-2.5 py-0.5 font-mono text-2xs uppercase tracking-wider text-ink-muted">
+            In Entwicklung
+          </span>
+        ) : (
+          <span className="font-mono text-sm text-ink-muted">
+            {String(index + 1).padStart(2, "0")}
+          </span>
+        )}
       </div>
 
       <h3 className="mt-5 text-lg font-semibold text-ink-primary">

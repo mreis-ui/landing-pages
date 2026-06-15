@@ -5,6 +5,12 @@ import {
   Stamp,
   LineChart,
   Boxes,
+  Landmark,
+  Calculator,
+  TrendingUp,
+  ScanLine,
+  MessagesSquare,
+  Users,
   type LucideIcon,
 } from "lucide-react";
 import type { IconName } from "@/lib/site";
@@ -16,6 +22,12 @@ const map: Record<IconName, LucideIcon> = {
   stamp: Stamp,
   "line-chart": LineChart,
   boxes: Boxes,
+  landmark: Landmark,
+  calculator: Calculator,
+  "trending-up": TrendingUp,
+  "scan-line": ScanLine,
+  "messages-square": MessagesSquare,
+  users: Users,
 };
 
 export function ModuleIcon({

@@ -18,7 +18,7 @@ const icons = [FileWarning, Clock, PhoneOff];
 
 const stats = [
   { value: pricing.savings, label: "gespart bei Pilotkunde KFZ-Kruse aus Ganderkesee" },
-  { value: "6 Module", label: "in einer Plattform" },
+  { value: "12 Module", label: "in einer Plattform" },
   { value: "1 Tag", label: "bis startklar" },
 ];
 

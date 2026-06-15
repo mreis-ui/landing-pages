@@ -18,7 +18,7 @@ import {
 const heroStats = [
   { value: pricing.savings, label: "gespart bei Pilotkunde KFZ-Kruse" },
   { value: `${pricing.trialDays} Tage`, label: "kostenlos testen" },
-  { value: "6 Module", label: "in einer Plattform" },
+  { value: "12 Module", label: "in einer Plattform" },
   { value: "1 Tag", label: "bis startklar" },
 ];
 
@@ -92,8 +92,8 @@ export default function HomePage() {
           <Reveal>
             <SectionHeading
               eyebrow="Funktionen"
-              title="Alles, was den Betrieb am Laufen hält — in einer Plattform."
-              lede="Sechs Module, die ineinandergreifen. Kein Insellösungs-Chaos, kein Medienbruch — ein System vom ersten Anruf bis zur bezahlten Rechnung."
+              title="Ein System für den ganzen Betrieb."
+              lede="Vom Werkstatt-Alltag über Buchhaltung, Banking und Controlling bis zu Belegerkennung und Personal — alle Module greifen ineinander. Kein Insellösungs-Chaos, kein Medienbruch, keine doppelte Datenpflege."
             />
           </Reveal>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -154,7 +154,7 @@ export default function HomePage() {
               <div className="rounded-lg border border-line-strong bg-surface-elevated p-8 shadow-md">
                 <ul className="space-y-3">
                   {[
-                    "Alle sechs Module aus einer Hand",
+                    "Alle Module aus einer Hand",
                     `${pricing.trialDays} Tage kostenlos testen, ohne Kreditkarte`,
                     "Monatlich kündbar, keine lange Vertragsbindung",
                     "Persönliches Onboarding & Datenmigration",

@@ -56,11 +56,13 @@ export default function ModuleDetailPage({
               <ModuleIcon name={m.icon} className="h-6 w-6" />
             </span>
             <div>
-              <div className="flex items-center gap-3">
-                <span className="font-mono text-sm text-brand-orange">
-                  {String(idx + 1).padStart(2, "0")}
-                </span>
-                <span className="eyebrow">Funktion</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="eyebrow">{m.category}</span>
+                {m.status === "soon" && (
+                  <span className="rounded-pill border border-line bg-surface-elevated px-2.5 py-0.5 font-mono text-2xs uppercase tracking-wider text-ink-muted">
+                    In Entwicklung
+                  </span>
+                )}
               </div>
               <h1 className="mt-2 text-balance text-4xl font-semibold tracking-tight text-ink-primary sm:text-5xl">
                 {m.name}
@@ -73,13 +75,27 @@ export default function ModuleDetailPage({
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <ButtonLink href={company.trialUrl} variant="primary" size="lg">
-              In der Demo ansehen
-              <ArrowRight className="h-4 w-4" strokeWidth={2} />
-            </ButtonLink>
-            <ButtonLink href="/kontakt" variant="secondary" size="lg">
-              Beratung anfragen
-            </ButtonLink>
+            {m.status === "soon" ? (
+              <>
+                <ButtonLink href="/kontakt" variant="primary" size="lg">
+                  Früh dabei sein
+                  <ArrowRight className="h-4 w-4" strokeWidth={2} />
+                </ButtonLink>
+                <ButtonLink href={company.trialUrl} variant="secondary" size="lg">
+                  Restliche Module testen
+                </ButtonLink>
+              </>
+            ) : (
+              <>
+                <ButtonLink href={company.trialUrl} variant="primary" size="lg">
+                  In der Demo ansehen
+                  <ArrowRight className="h-4 w-4" strokeWidth={2} />
+                </ButtonLink>
+                <ButtonLink href="/kontakt" variant="secondary" size="lg">
+                  Beratung anfragen
+                </ButtonLink>
+              </>
+            )}
           </div>
         </Container>
       </section>

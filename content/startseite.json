@@ -1,0 +1,64 @@
+{
+  "problems": [
+    {
+      "title": "Aufträge auf Zetteln",
+      "body": "Handgeschriebene Aufträge gehen verloren, werden falsch gelesen oder vergessen. Mehrere Stunden pro Woche — verschwendet."
+    },
+    {
+      "title": "Mahnwesen per Hand",
+      "body": "Offene Rechnungen stapeln sich, weil niemand Zeit hat, Mahnungen zu schreiben. Tausende Euro pro Jahr — zu spät oder gar nicht kassiert."
+    },
+    {
+      "title": "Termine am Telefon",
+      "body": "Kunden rufen an, Sie stehen am Fahrzeug. Rückrufe vergessen. Konkurrenzbetrieb bekommt den Auftrag."
+    }
+  ],
+  "howItWorks": [
+    {
+      "step": "01",
+      "title": "Account erstellen",
+      "body": "In wenigen Minuten registriert. Keine Kreditkarte, kein Risiko — 30 Tage kostenlos testen."
+    },
+    {
+      "step": "02",
+      "title": "Einrichten & loslegen",
+      "body": "Wir richten Werkstatt ONE mit Ihnen ein und übernehmen Ihre Daten. Persönliches Onboarding inklusive."
+    },
+    {
+      "step": "03",
+      "title": "Betrieb digitalisiert",
+      "body": "Termine, Aufträge, Mahnwesen und TÜV-Reminder laufen — Sie gewinnen Zeit fürs Wesentliche."
+    }
+  ],
+  "testimonial": {
+    "quote": "Seit Werkstatt ONE spare ich mir rund 13 Stunden Verwaltungskram pro Woche.",
+    "author": "Christian Kruse",
+    "role": "KFZ-Meisterbetrieb Ganderkesee"
+  },
+  "trustSignals": [
+    "Keine Kreditkarte",
+    "Monatlich kündbar",
+    "Persönliches Onboarding",
+    "DSGVO-konform"
+  ],
+  "dashboardKpis": [
+    {
+      "label": "Umsatz diese Woche",
+      "value": "8.240 €",
+      "delta": "+12 % vs. Vorwoche",
+      "tone": "ok"
+    },
+    {
+      "label": "Offene Aufträge",
+      "value": "14",
+      "delta": "3 heute fällig",
+      "tone": "warn"
+    },
+    {
+      "label": "Auslastung",
+      "value": "87 %",
+      "delta": "Mo–Sa",
+      "tone": "info"
+    }
+  ]
+}

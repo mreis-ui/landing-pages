@@ -22,12 +22,26 @@ export default function ImpressumPage() {
             <p>
               {company.name}
               <br />
-              {company.owner} — {company.role}
-              <br />
               {company.street}
               <br />
               {company.city}
             </p>
+
+            <h2>Vertreten durch</h2>
+            <p>
+              {company.role} {company.owner}
+            </p>
+
+            {company.registerNo && (
+              <>
+                <h2>Handelsregister</h2>
+                <p>
+                  Registergericht: {company.registerCourt}
+                  <br />
+                  Registernummer: {company.registerNo}
+                </p>
+              </>
+            )}
 
             <h2>Kontakt</h2>
             <p>
@@ -41,7 +55,9 @@ export default function ImpressumPage() {
 
             <h2>Umsatzsteuer / Steuer</h2>
             <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:{" "}
+              {company.vatId.startsWith("DE")
+                ? "Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: "
+                : "Steuernummer: "}
               {company.vatId}
             </p>
 

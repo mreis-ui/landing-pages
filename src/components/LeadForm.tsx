@@ -157,6 +157,19 @@ export function LeadForm({
       console.error("Lead submission:", err);
     }
 
+    // Fire-and-forget: interne E-Mail-Benachrichtigung an info@ via n8n.
+    // Darf den Lead niemals blockieren — Fehler werden ignoriert.
+    try {
+      fetch(integrations.leadNotifyUrl, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+        keepalive: true,
+      }).catch(() => {});
+    } catch {
+      /* ignore */
+    }
+
     setConsentGiven(kiConsent);
     setStatus("ok");
     if (kiConsent) launchVoiceAgent();

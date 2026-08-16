@@ -1,0 +1,32 @@
+{
+  "items": [
+    {
+      "q": "Was kostet Werkstatt ONE?",
+      "a": "Werkstatt ONE ist monatlich kündbar, ohne lange Vertragsbindung. Den genauen Preis stimmen wir abhängig von Tarif und gewünschtem Funktionsumfang im persönlichen Gespräch mit Ihnen ab. Sie testen alle Funktionen 30 Tage kostenlos, ganz ohne Kreditkarte."
+    },
+    {
+      "q": "Wie lange dauert die Einrichtung?",
+      "a": "In der Regel sind Sie an einem Tag startklar. Wir übernehmen die Einrichtung gemeinsam mit Ihnen, importieren Ihre bestehenden Daten und begleiten Sie mit einem persönlichen Onboarding."
+    },
+    {
+      "q": "Kann ich meine bestehenden Daten übernehmen?",
+      "a": "Ja. Wir migrieren Ihre Stammdaten — Kunden, Fahrzeuge, offene Posten — aus Ihrem bisherigen System. Sie starten nicht bei null, sondern direkt mit Ihren echten Daten."
+    },
+    {
+      "q": "Ist Werkstatt ONE DSGVO-konform?",
+      "a": "Ja. Werkstatt ONE ist DSGVO-konform aufgebaut, die Datenübertragung erfolgt SSL/TLS-verschlüsselt. Auf Wunsch stellen wir einen Auftragsverarbeitungsvertrag (AVV) bereit."
+    },
+    {
+      "q": "Kann ich monatlich kündigen?",
+      "a": "Ja. Werkstatt ONE ist monatlich kündbar. Keine Mindestlaufzeit, keine versteckten Kosten — Sie bleiben, weil es sich lohnt, nicht weil ein Vertrag Sie hält."
+    },
+    {
+      "q": "Brauche ich besondere Hardware?",
+      "a": "Nein. Werkstatt ONE läuft im Browser — auf PC, Tablet und Smartphone. Für die digitale Auftragserfassung empfiehlt sich ein Tablet, zwingend nötig ist es aber nicht."
+    },
+    {
+      "q": "Für wen ist Werkstatt ONE gedacht?",
+      "a": "Für KFZ-Meisterbetriebe und Werkstätten, die Verwaltungsaufwand reduzieren und ihren Betrieb digitalisieren wollen. Entwickelt aus der Praxis einer Werkstatt in Ganderkesee — für Betriebe im Landkreis Oldenburg und darüber hinaus."
+    }
+  ]
+}

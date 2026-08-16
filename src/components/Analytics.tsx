@@ -37,6 +37,26 @@ export function Analytics() {
 
       {/* First-party attribution (gclid + utm_*, 90 days) — sets window.FLOWBYTE_ATTR */}
       <Script id="fb-attr" src="/tracking.js" strategy="afterInteractive" />
+
+      {/* Self-hosted Matomo — cookieless, daher einwilligungsfrei (kein Cookie-Banner nötig).
+          Lädt nur, wenn eine Site-ID konfiguriert ist. */}
+      {integrations.matomoSiteId && (
+        <Script id="matomo-init" strategy="afterInteractive">
+          {`
+            var _paq = window._paq = window._paq || [];
+            _paq.push(['disableCookies']);
+            _paq.push(['trackPageView']);
+            _paq.push(['enableLinkTracking']);
+            (function() {
+              var u="${integrations.matomoUrl}/";
+              _paq.push(['setTrackerUrl', u+'matomo.php']);
+              _paq.push(['setSiteId', '${integrations.matomoSiteId}']);
+              var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+              g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+            })();
+          `}
+        </Script>
+      )}
     </>
   );
 }

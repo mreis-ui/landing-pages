@@ -1,0 +1,58 @@
+{
+  "pricing": {
+    "monthly": "Auf Anfrage",
+    "cycle": "pro Monat",
+    "cancel": "monatlich kündbar",
+    "trialDays": 30,
+    "onboarding": "1 Tag bis startklar",
+    "savings": "13 h / Woche"
+  },
+  "plans": [
+    {
+      "name": "Starter",
+      "price": "Auf Anfrage",
+      "cycle": "",
+      "tagline": "Für den Einstieg in den digitalen Betrieb.",
+      "features": [
+        "Online-Terminbuchung 24/7",
+        "TÜV- & HU-Reminder",
+        "Digitale Rechnungen",
+        "Bis 2 Nutzer",
+        "E-Mail-Support"
+      ],
+      "cta": "Angebot anfragen"
+    },
+    {
+      "name": "Pro",
+      "price": "Auf Anfrage",
+      "cycle": "",
+      "tagline": "Der volle Funktionsumfang für wachsende Betriebe.",
+      "featured": true,
+      "features": [
+        "Alle Starter-Funktionen",
+        "Automatisches Mahnwesen",
+        "Leihwagen-Verwaltung",
+        "KI-Preisprognosen",
+        "Bis 8 Nutzer",
+        "Telefon-Support",
+        "ERP-Anbindung (Profi32 u. a.)"
+      ],
+      "cta": "Angebot anfragen"
+    },
+    {
+      "name": "Enterprise",
+      "price": "Individuell",
+      "cycle": "",
+      "tagline": "Für Multi-Standort-Betriebe mit eigenen Anforderungen.",
+      "features": [
+        "Alle Pro-Funktionen",
+        "Unbegrenzte Nutzer",
+        "Multi-Standort",
+        "Custom-Integrationen",
+        "Dedizierter Ansprechpartner",
+        "SLA-Garantie"
+      ],
+      "cta": "Beratung anfragen"
+    }
+  ]
+}

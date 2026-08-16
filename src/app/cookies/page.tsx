@@ -40,11 +40,20 @@ export default function CookiesPage() {
               können nicht deaktiviert werden. Sie werden in der Regel nur als
               Reaktion auf von Ihnen getätigte Aktionen gesetzt.
             </p>
-            <h3>Analyse-Cookies (Google Tag Manager / Google Ads)</h3>
+            <h3>Analyse- und Marketing-Cookies (Google Tag Manager / Google Ads / Google Analytics)</h3>
             <p>
               Diese Cookies helfen uns, das Verhalten der Besucher zu verstehen und
-              unsere Website zu verbessern. Sie werden ausschließlich nach Ihrer
-              ausdrücklichen Einwilligung aktiviert.
+              unsere Werbung zu messen. Sie werden ausschließlich nach Ihrer
+              ausdrücklichen Einwilligung über den Cookie-Banner aktiviert
+              (Google Consent Mode v2). Ihre Auswahl können Sie jederzeit über
+              den Link „Cookie-Einstellungen“ im Footer ändern oder widerrufen.
+            </p>
+            <h3>Einwilligungsfreie Reichweiten-Messung (Matomo)</h3>
+            <p>
+              Zur Reichweiten-Messung setzen wir eine selbst gehostete,
+              cookielose Matomo-Instanz ein. Dabei werden keine Cookies gesetzt
+              und keine Daten an Dritte übertragen; eine Einwilligung ist daher
+              nicht erforderlich.
             </p>
 
             <h2>Cookies verwalten</h2>

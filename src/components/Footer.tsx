@@ -3,6 +3,7 @@ import { MapPin, Phone, Mail } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/Logo";
 import { company, footerSections } from "@/lib/site";
+import { CookieSettingsButton } from "@/components/CookieBanner";
 
 export function Footer() {
   return (
@@ -62,6 +63,11 @@ export function Footer() {
                     )}
                   </li>
                 ))}
+                {sec.title === "Rechtliches" && (
+                  <li>
+                    <CookieSettingsButton />
+                  </li>
+                )}
               </ul>
             </div>
           ))}

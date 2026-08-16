@@ -3,7 +3,8 @@ import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { Analytics, GtmNoScript } from "@/components/Analytics";
+import { Analytics } from "@/components/Analytics";
+import { CookieBanner } from "@/components/CookieBanner";
 import { company } from "@/lib/site";
 
 const interTight = Inter_Tight({
@@ -70,11 +71,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className={`${interTight.variable} ${jetbrainsMono.variable}`}>
-      <head>
-        <Analytics />
-      </head>
       <body className="min-h-screen antialiased">
-        <GtmNoScript />
+        <Analytics />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-ink-primary focus:px-4 focus:py-2 focus:text-sm focus:text-white"
@@ -84,6 +82,7 @@ export default function RootLayout({
         <Header />
         <main id="main">{children}</main>
         <Footer />
+        <CookieBanner />
       </body>
     </html>
   );

@@ -1,16 +1,16 @@
 {
+  "street": "Auf dem Hohenborn 43",
+  "vatId": "5712405837",
+  "registerNo": "",
+  "classification": "IT-Dienstleistungen / Unternehmensberatung",
+  "registerCourt": "",
+  "city": "27777 Ganderkesee",
   "name": "Flowbyte Systems GmbH",
+  "phone": "+49 170 5899773",
   "product": "Werkstatt ONE",
   "owner": "Mattis Kruse",
-  "role": "Geschäftsführer",
-  "street": "Auf dem Hohenborn 43",
-  "city": "27777 Ganderkesee",
   "region": "Landkreis Oldenburg",
-  "phone": "0151 19653560",
-  "phoneHref": "+4915119653560",
-  "email": "info@flowbytesystems.com",
-  "vatId": "5712405837",
-  "registerCourt": "",
-  "registerNo": "",
-  "classification": "IT-Dienstleistungen / Unternehmensberatung"
+  "role": "Geschäftsführer",
+  "phoneHref": "+491705899773",
+  "email": "info@flowbytesystems.com"
 }

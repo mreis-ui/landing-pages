@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { modules, company } from "@/lib/site";
+import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = `https://${company.domain}`;
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/loesungen",
     "/preise",
     "/referenzen",
+    "/blog",
     "/kostenlos-testen",
     "/vision",
     "/faq",
@@ -32,6 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${base}/funktionen/${m.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+    ...getAllPosts().map((p) => ({
+      url: `${base}/blog/${p.slug}`,
+      lastModified: new Date(`${p.date}T12:00:00Z`),
+      changeFrequency: "yearly" as const,
       priority: 0.6,
     })),
   ];

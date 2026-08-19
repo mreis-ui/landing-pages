@@ -65,6 +65,7 @@ export const nav: NavLink[] = [
   { label: "Funktionen", href: "/funktionen" },
   { label: "Lösungen", href: "/loesungen" },
   { label: "Referenzen", href: "/referenzen" },
+  { label: "Blog", href: "/blog" },
   { label: "Preise", href: "/preise" },
   { label: "Vision", href: "/vision" },
   { label: "FAQ", href: "/faq" },
